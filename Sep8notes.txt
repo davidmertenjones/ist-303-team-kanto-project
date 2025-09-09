@@ -1,0 +1,45 @@
+Sep8 MEETING NOTES 
+
+Aashish: frontend
+
+David: backend
+
+Eva, Aish, Jen: testing, presentation, data compilation
+
+
+
+PROJECT CONCEPT
+
+Features:
+
+Visitors can:
+ • Browse services by category
+ • Search by location (city or ZIP)
+ • View provider details (name, phone, website, service areas)
+ • Admins can add/edit/delete providers, categories, and service areas
+
+
+Stretch goals: 	Reviews/ratings
+			geocoding + radius search with location display in a map
+			Data about clinics and associated insurance policies
+			Find insurance data to help us look up
+
+
+
+Features: MVP	Browse services by catalogue (ie. maintenance, health, food kitchens)
+
+	  MVP	Search services by location (city or zip)
+		NONMVP	Possible geocoding through user location
+		NONMVP	Display in map 
+
+	  MVP 	Show details about services (ie. contact info, name)
+
+	  MVP	Healthcare provider needs to be able to edit their own data
+		NONMVP 	Show details about affordability and associated insurance policies 
+
+	  MVP	Allow users to rate services, and make reviews viewable
+
+	
+Relevant stakeholders: Healthcare Providers, Patients, Community-based health organizations, Food Kitchens, Hospitals and Clinics, Department of Public Health, Universities
+
+
