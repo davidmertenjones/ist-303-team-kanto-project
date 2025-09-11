@@ -18,7 +18,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 * IT and Application Support Teams who ensure infrastructure, security, integration, and smooth operations.  
 * Healthcare Executives/Leadership who use service catalog insights for strategic planning and resource allocation.
 
-### User Stories (MVP)  
+### _User Stories (MVP)_  
 
 
 ### Browse Services by Category
@@ -32,61 +32,67 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Build UI components for search and results: 2 days
 
 
-**Search for Services by Location**
+### Search for Services by Location
 
-* As a patient, I want to search for services by name, city or zip in San Bernardino County so that I can easily locate the medical facilities I am looking for.  
-* Priority: 1	  
-* Estimate: Requires expansion of the service database and search functionality so users can filter services by location field. Estimated 5.5 days total.  
-  * Extend service database with location fields: 1 day  
-  * Add database query logic to support filtering by location: 2 days  
-  * UI development for location search and results display: 2 days
+* As a patient, I want to search for services by name, city or zip in San Bernardino County so that I can easily locate the medical facilities I am looking for.
+  
+  * Priority: 1	  
+  * Estimate: Requires expansion of the service database and search functionality so users can filter services by location field. Estimated 5.5 days total.  
+    * Extend service database with location fields: 1 day  
+    * Add database query logic to support filtering by location: 2 days  
+    * UI development for location search and results display: 2 days
 
 
-**View Detailed Provider Information**
+### View Detailed Provider Information
 
 * As a patient, I want to view detailed provider information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.  
-* Priority: 1	  
-* Estimate: Requires expansion of the service database with detailed provider information and creating a detail page to display the information to users. Estimated 3.5 days total.  
-  * Extend database with additional provider information fields: 1 day  
-  * UI for provider detail page layout: 2 days
+  * Priority: 1	  
+  * Estimate: Requires expansion of the service database with detailed provider information and creating a detail page to display the information to users. Estimated 3.5 days total.  
+    * Extend database with additional provider information fields: 1 day  
+    * UI for provider detail page layout: 2 days
 
 
-**Create Account**
+### Create Account
 
 * As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
-* Priority: 2  
-* Estimate: Requires implementing user registration and login with role-based access, email verification, and secure password handling. Estimated 6.5 days total.  
-  * Create a UI page for user account creation: 3 days  
-  * Extend database with additional user fields: username, email, location of residence, etc: 3 days
+  
+  * Priority: 2  
+  * Estimate: Requires implementing user registration and login with role-based access, email verification, and secure password handling. Estimated 6.5 days total.  
+    * Create a UI page for user account creation: 3 days  
+    * Extend database with additional user fields: username, email, location of residence, etc: 3 days
 
 
-**Ratings/Reviews**
+### Ratings/Reviews
 
 * As a patient, I want to provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
-* Priority: 2	  
-* Estimate: Requires creation of reviews and ratings system linked to users, along with UI for displaying that feedback. Estimated 6.5 days total.  
-  * Create reviews data model: 2 days  
-  * UI for review submission form and review display: 2 days  
-  * UI for administrator moderation controls: 2 days
 
-**Provider Offerings**
+  * Priority: 2	  
+  * Estimate: Requires creation of reviews and ratings system linked to users, along with UI for displaying that feedback. Estimated 6.5 days total.  
+    * Create reviews data model: 2 days  
+    * UI for review submission form and review display: 2 days  
+    * UI for administrator moderation controls: 2 days
+
+
+### Provider Offerings
 
 * As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
-* Priority: 1	  
-* Estimate: Creating an alternate view of the catalogue specifically for providers. Estimated 3.5 days total.  
-  * Filter services by provider/facility: 1 day  
-  * UI for services specific to that facility: 2 days  
+
+  * Priority: 1	  
+  * Estimate: Creating an alternate view of the catalogue specifically for providers. Estimated 3.5 days total.  
+    * Filter services by provider/facility: 1 day  
+    * UI for services specific to that facility: 2 days  
     
 
-
-**Update Provider Offerings**
+### Update Provider Offerings
 
 * As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
-* Priority: 1	  
-* Estimate: Functionality for administrators to manage catalogue entries through adding, editing, or removing services through an administrator panel. Estimated 5.5 days total.  
-  * Extend database logic to support create/update/delete operations: 1 day  
-  * Implement backend logic to edit database according to management actions: 2 days  
-  * UI for administrator panel: 2 days
+
+  * Priority: 1	  
+  * Estimate: Functionality for administrators to manage catalogue entries through adding, editing, or removing services through an administrator panel. Estimated 5.5 days total.  
+    * Extend database logic to support create/update/delete operations: 1 day  
+    * Implement backend logic to edit database according to management actions: 2 days  
+    * UI for administrator panel: 2 days
+
 
 **User Stories (Non-MVP)**  
 
