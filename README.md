@@ -1,29 +1,30 @@
-**A Medical Service Catalog**
+# A Medical Service Catalog
 
-**PART A**
+## PART A
 
-**Overview**  
+### Overview  
 A medical service catalog app is a Web application that centralizes and streamlines access to healthcare organizations’ available medical services, allowing patients, providers, and administrators to easily browse, request, and manage care options.  The initial rollout of this application will focus on serving the San Bernardino County area.
 
-**Team Name**  
+### Team Name  
 Team Kanto
 
-**Team Members**  
+### Team Members  
 David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
-**Stakeholders**  
+### Stakeholders  
 * Patients who browse, request, and schedule medical services.  
 * Healthcare Providers (physicians, nurses, specialists, therapists) who order, deliver, and coordinate patient services.  
 * Hospital/Clinic Administrators who manage service offerings, availability, and workflows.  
 * IT and Application Support Teams who ensure infrastructure, security, integration, and smooth operations.  
 * Healthcare Executives/Leadership who use service catalog insights for strategic planning and resource allocation.
 
-**User Stories (MVP)**  
+### User Stories (MVP)  
 
 
-**Browse Services by Category**
+### Browse Services by Category
 
-* As a patient, I want to browse available medical services by category (e.g., lab tests, imaging, consultations) so that I can quickly find what I need.  
+* As a patient, I want to browse available medical services by category (e.g., lab tests, imaging, consultations) so that I can quickly find what I need.
+  
 * Priority: 1	  
 * Estimate: Requires database of services as well as system to retrieve records based on user input through UI. Time spent to set up database and integrate search feature will be shared among several user tasks. Estimated 7.5 days total.  
   * Design core service database schema: 2 days  
