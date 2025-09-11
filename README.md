@@ -142,7 +142,6 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Option to export data: 1 day
 \
 \
-\
 #### **Time Estimate Subtotal, MVP:** 38.5  
 #### **Time Estimate Subtotal, non-MVP:** 24 
 #### **Total Days:** 62.5
