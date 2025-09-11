@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 **A Medical Service Catalog**
 
 **PART A**
@@ -130,30 +129,4 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 **Time Estimate Subtotal, MVP: 38.5**  
 **Time Estimate Subtotal, non-MVP: 24**  
 **Total Days: 62.5**
-=======
-# ist-303-team-kanto-project
-Group Project Repository for IST 303
-
-## Group Members:
-
-Jennifer Long
-
-David Merten-Jones
-
-Eva Mui
-
-Aishwarya Pandian
-
-Aashish Sunar
-
-
-
-
-
-## Stakeholders:
-
-
-
-## Requirements:
->>>>>>> e6d3ff78cc51b790a5bffcf95fd60ae9828ed3d2
 
