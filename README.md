@@ -18,7 +18,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 * IT and Application Support Teams who ensure infrastructure, security, integration, and smooth operations.  
 * Healthcare Executives/Leadership who use service catalog insights for strategic planning and resource allocation.
 
-### _User Stories (MVP)_  
+### <ins>User Stories (MVP)</ins>  
 
 
 ### Browse Services by Category
