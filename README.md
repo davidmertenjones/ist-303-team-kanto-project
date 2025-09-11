@@ -140,8 +140,10 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Set up data analytics model: 3 days  
     * UI for admin report of statistics: 2 days  
     * Option to export data: 1 day
-<br><br><br>
-#### **Time Estimate — MVP:** 38.5 days  
-#### **Time Estimate — Non-MVP:** 24 days  
-#### **Total Estimated Effort:** 62.5 days
+
+### <ins>Project Time Estimate</ins>  
+
+**Time Estimate — MVP:** 38.5 days  
+**Time Estimate — Non-MVP:** 24 days  
+**Total Estimated Effort:** 62.5 days
 
