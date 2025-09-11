@@ -141,7 +141,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * UI for admin report of statistics: 2 days  
     * Option to export data: 1 day
 <br><br><br>
-### **Time Estimate — MVP:** 38.5 days  
-### **Time Estimate — Non-MVP:** 24 days  
-### **Total Estimated Effort:** 62.5 days
+#### **Time Estimate — MVP:** 38.5 days  
+#### **Time Estimate — Non-MVP:** 24 days  
+#### **Total Estimated Effort:** 62.5 days
 
