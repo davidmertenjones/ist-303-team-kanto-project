@@ -109,7 +109,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Integrate with Google Maps API or something similar: 3 days
 
 
-### <ins>Allow Administrators to Verify Status</ins>
+### Allow Administrators to Verify Status
 
 * As an administrator, I want to be able to verify the status of healthcare providers requesting access so that only legitimate providers can add or edit service details.
   
@@ -120,7 +120,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * UI for administrator view to approve or reject: 2 days
 
 
-### <ins>Compare Costs</ins>
+### Compare Costs
 
 * As a patient, I want to check insurance coverage and out-of-pocket costs for each service so that I can make informed financial decisions.
   
@@ -131,7 +131,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * UI for cost breakdown: 2 days
 
 
-### <ins>Statistical Reporting for Administrators</ins>
+### Statistical Reporting for Administrators
 
 * As an administrator, I want to generate reports on service usage and demand so that I can make data-driven decisions.
   
@@ -140,8 +140,9 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Set up data analytics model: 3 days  
     * UI for admin report of statistics: 2 days  
     * Option to export data: 1 day
-\
-\
+<br>
+<br>
+<br>
 #### **Time Estimate Subtotal, MVP:** 38.5  
 #### **Time Estimate Subtotal, non-MVP:** 24 
 #### **Total Days:** 62.5
