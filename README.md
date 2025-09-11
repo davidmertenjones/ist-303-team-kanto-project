@@ -2,16 +2,16 @@
 
 ## PART A
 
-### Overview  
+### <ins>Overview</ins>  
 A medical service catalog app is a Web application that centralizes and streamlines access to healthcare organizations’ available medical services, allowing patients, providers, and administrators to easily browse, request, and manage care options.  The initial rollout of this application will focus on serving the San Bernardino County area.
 
-### Team Name  
+### <ins>Team Name</ins>  
 Team Kanto
 
-### Team Members  
+### <ins>Team Members</ins>  
 David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
-### Stakeholders  
+### <ins>Stakeholders</ins>  
 * Patients who browse, request, and schedule medical services.  
 * Healthcare Providers (physicians, nurses, specialists, therapists) who order, deliver, and coordinate patient services.  
 * Hospital/Clinic Administrators who manage service offerings, availability, and workflows.  
@@ -94,46 +94,50 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * UI for administrator panel: 2 days
 
 
-**User Stories (Non-MVP)**  
+### <ins>User Stories (Non-MVP)</ins>  
 
 
-**Search Based on Current Location**
+### Search Based on Current Location
 
 * As a patient, I want to search for medical services by category (e.g., lab tests, imaging, consultations) based on my current location in San Bernardino County and view the fastest route on a map so that I can easily access nearby care options.  
-* Priority: 3	  
-* Estimate: Requires using browser location data and mapping integration through API call to filter services by proximity and display the fastest route. Estimated 6.5 days total.  
-  * Setup browser geolocation: 1 day  
-  * Extend query logic to filter services by proximity: 2 days  
-  * Integrate with Google Maps API or something similar: 3 days
+  * Priority: 3	  
+  * Estimate: Requires using browser location data and mapping integration through API call to filter services by proximity and display the fastest route. Estimated 6.5 days total.  
+    * Setup browser geolocation: 1 day  
+    * Extend query logic to filter services by proximity: 2 days  
+    * Integrate with Google Maps API or something similar: 3 days
 
-**Allow Administrators to Verify Status**
+
+### <ins>Allow Administrators to Verify Status</ins>
 
 * As an administrator, I want to be able to verify the status of healthcare providers requesting access so that only legitimate providers can add or edit service details.  
-* Priority: 3	  
-* Estimate: Requires extending user profiles with credential fields, creating a submission process for documents, and letting admins approve or reject them. Estimated 5.5 days total.  
-  * Extend user database with credential fields: 1 day  
-  * UI for providers to upload proof: 2 days  
-  * UI for administrator view to approve or reject: 2 days
+  * Priority: 3	  
+  * Estimate: Requires extending user profiles with credential fields, creating a submission process for documents, and letting admins approve or reject them. Estimated 5.5 days total.  
+    * Extend user database with credential fields: 1 day  
+    * UI for providers to upload proof: 2 days  
+    * UI for administrator view to approve or reject: 2 days
 
-**Compare Costs**
+
+### <ins>Compare Costs</ins>
 
 * As a patient, I want to check insurance coverage and out-of-pocket costs for each service so that I can make informed financial decisions.  
-* Priority: 4	  
-* Estimate: Requires extending the service database with pricing and insurance details, and a system for cost calculation. Estimated 5.5 days total.  
-  * Extend service database with cost and insurance fields: 1 day  
-  * Backend calculation for coverage and copay/deductible: 2 days  
-  * UI for cost breakdown: 2 days
+  * Priority: 4	  
+  * Estimate: Requires extending the service database with pricing and insurance details, and a system for cost calculation. Estimated 5.5 days total.  
+    * Extend service database with cost and insurance fields: 1 day  
+    * Backend calculation for coverage and copay/deductible: 2 days  
+    * UI for cost breakdown: 2 days
 
-**Statistical Reporting for Administrators**
+
+### <ins>Statistical Reporting for Administrators</ins>
 
 * As an administrator, I want to generate reports on service usage and demand so that I can make data-driven decisions.  
-* Priority: 4	  
-* Estimate: Requires storing and aggregating service usage data, and then creating admin reporting tools with visualization and export options. Estimated days 6.5 days total.  
-  * Set up data analytics model: 3 days  
-  * UI for admin report of statistics: 2 days  
-  * Option to export data: 1 day
+  * Priority: 4	  
+  * Estimate: Requires storing and aggregating service usage data, and then creating admin reporting tools with visualization and export options. Estimated days 6.5 days total.  
+    * Set up data analytics model: 3 days  
+    * UI for admin report of statistics: 2 days  
+    * Option to export data: 1 day
 
-**Time Estimate Subtotal, MVP: 38.5**  
-**Time Estimate Subtotal, non-MVP: 24**  
-**Total Days: 62.5**
+
+### **Time Estimate Subtotal, MVP:** 38.5  
+### **Time Estimate Subtotal, non-MVP:** 24 
+### **Total Days:** 62.5
 
