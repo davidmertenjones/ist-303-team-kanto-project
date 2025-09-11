@@ -45,7 +45,8 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### View Detailed Provider Information
 
-* As a patient, I want to view detailed provider information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.  
+* As a patient, I want to view detailed provider information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
+  
   * Priority: 1	  
   * Estimate: Requires expansion of the service database with detailed provider information and creating a detail page to display the information to users. Estimated 3.5 days total.  
     * Extend database with additional provider information fields: 1 day  
@@ -99,7 +100,8 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### Search Based on Current Location
 
-* As a patient, I want to search for medical services by category (e.g., lab tests, imaging, consultations) based on my current location in San Bernardino County and view the fastest route on a map so that I can easily access nearby care options.  
+* As a patient, I want to search for medical services by category (e.g., lab tests, imaging, consultations) based on my current location in San Bernardino County and view the fastest route on a map so that I can easily access nearby care options.
+  
   * Priority: 3	  
   * Estimate: Requires using browser location data and mapping integration through API call to filter services by proximity and display the fastest route. Estimated 6.5 days total.  
     * Setup browser geolocation: 1 day  
@@ -109,7 +111,8 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Allow Administrators to Verify Status</ins>
 
-* As an administrator, I want to be able to verify the status of healthcare providers requesting access so that only legitimate providers can add or edit service details.  
+* As an administrator, I want to be able to verify the status of healthcare providers requesting access so that only legitimate providers can add or edit service details.
+  
   * Priority: 3	  
   * Estimate: Requires extending user profiles with credential fields, creating a submission process for documents, and letting admins approve or reject them. Estimated 5.5 days total.  
     * Extend user database with credential fields: 1 day  
@@ -119,7 +122,8 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Compare Costs</ins>
 
-* As a patient, I want to check insurance coverage and out-of-pocket costs for each service so that I can make informed financial decisions.  
+* As a patient, I want to check insurance coverage and out-of-pocket costs for each service so that I can make informed financial decisions.
+  
   * Priority: 4	  
   * Estimate: Requires extending the service database with pricing and insurance details, and a system for cost calculation. Estimated 5.5 days total.  
     * Extend service database with cost and insurance fields: 1 day  
@@ -129,7 +133,8 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Statistical Reporting for Administrators</ins>
 
-* As an administrator, I want to generate reports on service usage and demand so that I can make data-driven decisions.  
+* As an administrator, I want to generate reports on service usage and demand so that I can make data-driven decisions.
+  
   * Priority: 4	  
   * Estimate: Requires storing and aggregating service usage data, and then creating admin reporting tools with visualization and export options. Estimated days 6.5 days total.  
     * Set up data analytics model: 3 days  
@@ -137,7 +142,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Option to export data: 1 day
 
 
-### **Time Estimate Subtotal, MVP:** 38.5  
-### **Time Estimate Subtotal, non-MVP:** 24 
-### **Total Days:** 62.5
+#### **Time Estimate Subtotal, MVP:** 38.5  
+#### **Time Estimate Subtotal, non-MVP:** 24 
+#### **Total Days:** 62.5
 
