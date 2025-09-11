@@ -25,11 +25,11 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 * As a patient, I want to browse available medical services by category (e.g., lab tests, imaging, consultations) so that I can quickly find what I need.
   
-* Priority: 1	  
-* Estimate: Requires database of services as well as system to retrieve records based on user input through UI. Time spent to set up database and integrate search feature will be shared among several user tasks. Estimated 7.5 days total.  
-  * Design core service database schema: 2 days  
-  * Develop backend search for query processing and filtering: 3 days  
-  * Build UI components for search and results: 2 days
+  * Priority: 1	  
+  * Estimate: Requires database of services as well as system to retrieve records based on user input through UI. Time spent to set up database and integrate search feature will be shared among several user tasks. Estimated 7.5 days total.  
+    * Design core service database schema: 2 days  
+    * Develop backend search for query processing and filtering: 3 days  
+    * Build UI components for search and results: 2 days
 
 
 **Search for Services by Location**
