@@ -143,7 +143,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Project Time Estimate</ins>  
 
-**Time Estimate — MVP:** 38.5 days  
-**Time Estimate — Non-MVP:** 24 days  
-**Total Estimated Effort:** 62.5 days
+*Time Estimate — MVP:* 38.5 days  
+*Time Estimate — Non-MVP:* 24 days  
+*Total Estimated Effort:* 62.5 days
 
