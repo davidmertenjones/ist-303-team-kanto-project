@@ -146,3 +146,27 @@ Time Estimate — MVP: 38.5 days
 Time Estimate — Non-MVP: 24 days  
 Total Estimated Effort: 62.5 days
 
+## PART B
+
+1 Define scope and objectives
+2 Identify stakeholders (patients, providers, administrators, IT teams, executives)
+3 Assign team roles and responsibilities
+4 Create initial timeline and milestones
+5 Design core service database schema
+Browse Services by Category
+Search for Services by Location
+Filter services by provider/facility 
+View Detailed Provider Information
+6. Create Data
+7. Develop backend query processing & filtering
+8. User Management
+Create Account (Patients, Providers, Admins)
+Enable role-based access
+9. Provider Management
+Display provider offerings
+Update Provider Offerings
+10. Admin Tools
+11. Design UI
+12.  Build UI components
+
+
