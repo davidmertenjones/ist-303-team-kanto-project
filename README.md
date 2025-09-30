@@ -139,23 +139,23 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
  
 ### Priority 1
 1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
-   * Define scope and objectives (0.5 days)
-   * Identify stakeholders (patients, providers, administrators, IT teams, executives) (0.5 day)
-  * Assign team roles and responsibilities (0.5 day)
-  * Create initial timeline and milestones (0.5 day) 
-  * Identify/publicly source facility & services datasets (3 days) - Aishwarya
-  * Define data schema, clean up data and create CSV (4 days) - David
-  * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
-    * Decide care pathing: urgent vs. non-urgent flows.
-      * Urgent care: return hospitals/urgent care centers that provide urgent services
-      * Non-urgent care: browse services (e.g., labs, imaging, surgery) and show which hospitals provide them
-* App development (7 days) – Aashish, David
-  * Implement schema and ingest CSV.
-  * Build search & results UI for urgent and non-urgent flows.
-* Test development (3 days) - ?
-* Document README with setup (1 day) - Aashish, David
-* Validate README with setup (1 day) - Jennifer, Eva, Aishwarya
-* Create burndown chart (1day) - Eva
+    * Define scope and objectives (0.5 days)
+    * Identify stakeholders (patients, providers, administrators, IT teams, executives) (0.5 day)
+    * Assign team roles and responsibilities (0.5 day)
+    * Create initial timeline and milestones (0.5 day) 
+    * Identify/publicly source facility & services datasets (3 days) - Aishwarya
+    * Define data schema, clean up data and create CSV (4 days) - David
+    * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
+      * Decide care pathing: urgent vs. non-urgent flows.
+        * Urgent care: return hospitals/urgent care centers that provide urgent services
+        * Non-urgent care: browse services (e.g., labs, imaging, surgery) and show which hospitals provide them
+    * App development (7 days) – Aashish, David
+      * Implement schema and ingest CSV.
+      * Build search & results UI for urgent and non-urgent flows.
+    * Test development (3 days) - ?
+    * Document README with setup (1 day) - Aashish, David
+    * Validate README with setup (1 day) - Jennifer, Eva, Aishwarya
+    * Create burndown chart (1day) - Eva
 
 2. As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
 * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
