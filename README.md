@@ -204,6 +204,3 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * App development (3 days) – Aashish, David
     * Test development (2 days) - ?
     * Demo preparation (7 days) - Team
-
-
-
