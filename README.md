@@ -207,5 +207,3 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 
 
 
-<img width="468" height="643" alt="image" src="https://github.com/user-attachments/assets/a751fa09-83ee-4620-9751-d24a74dfc73f" />
-
