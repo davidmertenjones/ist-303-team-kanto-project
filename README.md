@@ -136,6 +136,7 @@ Total Estimated Effort: 62.5 days
 
 ## PART B
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
+
  
 ### Priority 1
 1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
@@ -158,50 +159,51 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * Create burndown chart (1day) - Eva
 
 2. As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
-* UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-    * Search hospital facilities by name
-    * Search hospital facilities by city
-    * Search hospital facilities by ZIP
-* App development (3 days) – Aashish, David
-   * Build search & results UI
-* Test development (2 days) - ?
+    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
+      * Search hospital facilities by name
+      * Search hospital facilities by city
+      * Search hospital facilities by ZIP
+    * App development (3 days) – Aashish, David
+    * Build search & results UI
+    * Test development (2 days) - ?
 
 3. As a patient, when I select a facility, I want to view detailed information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
-* UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-    * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
-* App development (3 days) – Aashish, David
-* Test development (2 days) - ?
+    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
+      * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
+    * App development (3 days) – Aashish, David
+    * Test development (2 days) - ?
+
                          
 ### Priority 2
 4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
-* UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
+    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
     * Login option
-* App development (7 days) – Aashish, David
-   * Create Account (patient, provider, or administrator)
-   * Enable role-based access
-* Test development (2 days) - ?
+    * App development (7 days) – Aashish, David
+      * Create Account (patient, provider, or administrator)
+      * Enable role-based access
+    * Test development (2 days) - ?
 
 5. As a patient, I want to view and provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
-* UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-    * View ratings and feedback
-    * Provide ratings and feedback	
-* App development (3 days) – Aashish, David
-* Test development (2 days) - ?
+    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
+      * View ratings and feedback
+      * Provide ratings and feedback	
+    * App development (3 days) – Aashish, David
+    * Test development (2 days) - ?
 
 6. As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
-* UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-    * View catalog of services
-* App development (2 days) – Aashish, David
-* Test development (2 days) - ?
+    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
+      * View catalog of services
+    * App development (2 days) – Aashish, David
+    * Test development (2 days) - ?
 
 7. As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
-* UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
-  * Add services
-  * Remove services
-  * Edit services	
-* App development (3 days) – Aashish, David
-* Test development (2 days) - ?
-* Demo preparation (7 days) - Team
+    * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
+      * Add services
+      * Remove services
+      * Edit services	
+    * App development (3 days) – Aashish, David
+    * Test development (2 days) - ?
+    * Demo preparation (7 days) - Team
 
 
 
