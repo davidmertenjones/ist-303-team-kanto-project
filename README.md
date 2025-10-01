@@ -174,7 +174,8 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
       * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
     * App development (3 days) – Aashish, David
     * Test development (2 days) - ?
-###<ins>Velocity</ins> 
+      
+### <ins>Velocity</ins> 
 * Timeline: 4 weeks to milestone 1
 * Iteration: Every two weeks
 * User Stories: 3
