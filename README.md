@@ -130,15 +130,16 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Project Time Estimate</ins>  
 The Minimum Viable Product (MVP) will deliver all Priority 1 and Priority 2 user stories.
-Time Estimate — MVP: 38.5 days  
-Time Estimate — Non-MVP: 24 days  
-Total Estimated Effort: 62.5 days
+* Time Estimate — MVP: 38.5 days  
+* Time Estimate — Non-MVP: 24 days  
+* Total Estimated Effort: 62.5 days
 
 ## PART B
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
  
-### Priority 1
+###<ins>Priority 1</ins>
+#### Iteration 1 
 1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
     * Define scope and objectives (0.5 days)
     * Identify stakeholders (patients, providers, administrators, IT teams, executives) (0.5 day)
@@ -167,14 +168,25 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * Build search & results UI
     * Test development (2 days) - ?
 
+#### Iteration 2
 3. As a patient, when I select a facility, I want to view detailed information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
     * App development (3 days) – Aashish, David
     * Test development (2 days) - ?
+###<ins>Velocity</ins> 
+* Timeline: 4 weeks to milestone 1
+* Iteration: Every two weeks
+* User Stories: 3
+* Starting Velocity: 22.7%
+  * Scheduled Story Points: 22 story points as of Week 5
+  * Completed Story Points: 5 story points as of Week 5
+* Burndown Chart as of Week 5: 
+<img width="926" height="564" alt="Burndown Chart Week 5" src="https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a" />
 
-                         
-### Priority 2
+###<ins>Priority 2</ins>
+The user stories for Milestone 2.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
+
 4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
     * Login option
