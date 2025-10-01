@@ -138,7 +138,7 @@ The Minimum Viable Product (MVP) will deliver all Priority 1 and Priority 2 user
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
  
-###<ins>Priority 1</ins>
+### <ins>Priority 1</ins>
 #### Iteration 1 
 1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
     * Define scope and objectives (0.5 days)
@@ -184,7 +184,8 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 * Burndown Chart as of Week 5: 
 <img width="926" height="564" alt="Burndown Chart Week 5" src="https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a" />
 
-###<ins>Priority 2</ins>
+
+### <ins>Priority 2</ins>
 The user stories for Milestone 2.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
 4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
