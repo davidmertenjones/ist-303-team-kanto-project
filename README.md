@@ -182,7 +182,8 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 * Starting Velocity: 22.7%
   * Scheduled Story Points: 22 story points as of Week 5
   * Completed Story Points: 5 story points as of Week 5
-* Burndown Chart as of Week 5: 
+* Burndown Chart as of Week 5:
+  https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a 
 <img width="926" height="564" alt="Burndown Chart Week 5" src="https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a" />
 
 
