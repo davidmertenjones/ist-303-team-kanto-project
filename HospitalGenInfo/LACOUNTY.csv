@@ -1,4 +1,4 @@
-,Facility ID,Facility Name,Address,City/Town,State,ZIP Code,County/Parish,Telephone Number,Hospital Type,Hospital Ownership,Emergency Services,Meets criteria for birthing friendly designation,Hospital overall rating
+,fac_id,fac_name,address,city,state,zip_code,county,tel_num,hosp_type,hosp_owner,emergency,birth_friendly,rating
 0,050040,LAC/OLIVE VIEW-UCLA MEDICAL CENTER,14445 OLIVE VIEW DRIVE,SYLMAR,CA,91342,LOS ANGELES,(818) 364-1555,Acute Care Hospitals,Voluntary non-profit - Other,Yes,Y,2
 1,050056,ANTELOPE VALLEY HOSPITAL,1600 W AVE J,LANCASTER,CA,93534,LOS ANGELES,(661) 949-5500,Acute Care Hospitals,Government - Hospital District or Authority,Yes,Y,1
 2,050058,GLENDALE MEM HOSPITAL & HLTH CENTER,1420 S CENTRAL AVE,GLENDALE,CA,91204,LOS ANGELES,(818) 502-1900,Acute Care Hospitals,Voluntary non-profit - Private,Yes,Y,3
