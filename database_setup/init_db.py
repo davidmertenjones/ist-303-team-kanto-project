@@ -26,6 +26,8 @@ def csv_to_db(csv_file, db_name, schema):
     connection = sqlite3.connect(db_name)
 
     df = pd.read_csv(csv_file, index_col=0)
+    for column in df:
+        df[column] = df[column].apply(str)
     with open(schema) as f:
         connection.executescript(f.read())
 
@@ -35,6 +37,7 @@ def csv_to_db(csv_file, db_name, schema):
     for i in range(len(df)):
 
         cur = connection.cursor()
+        print(tuple(df.iloc[i]))
         cur.execute(f"INSERT INTO lacounty ({columns}) VALUES ({values})",
                     tuple(df.iloc[i])
                     )

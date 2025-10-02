@@ -6,13 +6,13 @@ CREATE TABLE lacounty (
     "address" TEXT NOT NULL,
     city TEXT NOT NULL,
     "state" TEXT NOT NULL,
-    zip_code INTEGER NOT NULL,
+    zip_code TEXT NOT NULL,
     county TEXT NOT NULL,
     tel_num TEXT NOT NULL,
     hosp_type TEXT NOT NULL,
     hosp_owner TEXT NOT NULL,
     "emergency" TEXT NOT NULL,
     birth_friendly TEXT NOT NULL,
-    rating INTEGER NOT NULL
+    rating TEXT NOT NULL
 
 );
