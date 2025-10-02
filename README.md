@@ -154,7 +154,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * App development (7 days) – Aashish, David
       * Implement schema and ingest CSV.
       * Build search & results UI for urgent and non-urgent flows.
-    * Test development (3 days) - ?
+    * Test development (3 days) - Jen
     * Document README with setup (1 day) - Aashish, David
     * Validate README with setup (1 day) - Jennifer, Eva, Aishwarya
     * Create burndown chart (1day) - Eva
@@ -166,14 +166,14 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
       * Search hospital facilities by ZIP
     * App development (3 days) – Aashish, David
     * Build search & results UI
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
 
 #### Iteration 2
 3. As a patient, when I select a facility, I want to view detailed information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
     * App development (3 days) – Aashish, David
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
       
 ### <ins>Velocity</ins> 
 * Timeline: 4 weeks to milestone 1
@@ -195,20 +195,20 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
     * App development (7 days) – Aashish, David
       * Create Account (patient, provider, or administrator)
       * Enable role-based access
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
 
 5. As a patient, I want to view and provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View ratings and feedback
       * Provide ratings and feedback	
     * App development (3 days) – Aashish, David
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
 
 6. As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View catalog of services
     * App development (2 days) – Aashish, David
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
 
 7. As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
@@ -216,5 +216,5 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
       * Remove services
       * Edit services	
     * App development (3 days) – Aashish, David
-    * Test development (2 days) - ?
+    * Test development (2 days) - Jen
     * Demo preparation (7 days) - Team
