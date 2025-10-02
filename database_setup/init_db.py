@@ -54,7 +54,10 @@ def csv_to_db(csv_file, db_name, schema):
 
 
 def db_check(csv_file, db_name, table_name):
-
+    """
+    Determines whether contents of csv file match contents of 
+    newly-created database file.
+    """
     con = sqlite3.connect(db_name)
     cursor = con.cursor()
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
