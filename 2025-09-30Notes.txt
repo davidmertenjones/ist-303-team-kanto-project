@@ -1,0 +1,38 @@
+Date: 9/30/2025
+Attendees: Eva, Jen, David, Aashish
+
+Agenda: Scrum Standup
+
+Eva
+What I have done: 
+- Reflector the description of the app to "a hospital facilities catalog-“-
+- Add part B (task breakdown, estimate, assignment) to the Readme on the GitHub Repo. Please review 
+What I will do:
+- Work on burndown chart.  There is not too much data
+Impediments:
+- Need to confirm if the burndown chart is for the whole semester or for each iteration
+- Need to confirm the Milestone 1 due date
+- I realize for Part B, we need to complete the setup for development and test.  Based on the description, it - needs to show skeleton codes.  Can someone work on this?  I am not sure who can work on the test.
+
+Jen
+What I have done: None
+What I will do: Work on Figma UI flow
+Impediments: None
+ 
+Re: Milestone 1 due date: That is due with Part C, Oct 23.
+
+David
+What I have done: Nothing is "done" yet
+What I will do: Implement schema and ingest CSV (in progress; looking into using SQL)
+Impediments: lack of knowledge about integrating different features.  Worked through some of Flask Web Development by Miguel Grinberg. Write some Flask code for the account creation form... something we can use Pytest tests for. 
+ 
+I'm trying to write some code for a search feature... I found a tutorial using HTMX and flask for live-updating search, but getting the database portion set up is outside my understanding: https://www.youtube.com/watch?v=PWEl1ysbPAY
+
+Aashish
+What I have done: Nothing is done so far
+What I am doing: I am refreshing my react/JavaScript skills by watching some tutorials, so I will be ready to work on the front end.
+What I will do:  Will work on the frontend and create a basic skeleton for the frontend part using Vite "React/TypeScript”
+
+
+
+
