@@ -165,7 +165,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
       * Search hospital facilities by city
       * Search hospital facilities by ZIP
     * App development (3 days) – Aashish, David
-    * Build search & results UI
+      * Build search & results UI
     * Test development (2 days) - Jen
 
 #### Iteration 2
