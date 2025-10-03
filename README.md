@@ -147,6 +147,8 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * Create initial timeline and milestones (0.5 day) 
     * Identify/publicly source facility & services datasets (3 days) - Aishwarya
     * Define data schema, clean up data and create CSV (4 days) - David
+        * Added function to convert .csv files to sqlite3 database - David
+        * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
       * Decide care pathing: urgent vs. non-urgent flows.
         * Urgent care: return hospitals/urgent care centers that provide urgent services
