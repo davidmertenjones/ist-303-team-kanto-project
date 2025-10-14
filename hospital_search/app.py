@@ -109,7 +109,7 @@ def search():
     print(q)
 
     if q:
-        results = Hospital.query.filter(Hospital.city.icontains(q) | Hospital.zip_code.icontains(q)).limit(100).all()
+        results = Hospital.query.filter(Hospital.city.icontains(q) | Hospital.zip_code.icontains(q) | Hospital.fac_name.icontains(q)).limit(100).all()
     else:
         results = []
 
