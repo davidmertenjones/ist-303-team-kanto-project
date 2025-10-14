@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Search</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+  <h1>Hospital Search by City/Zip Code</h1>
+  <a href="{{ url_for('login') }}">Log In</a><br>
+  <a href="{{ url_for('signup') }}">Sign Up</a><br>
+</head>
+<body>
+  <section class="section">
+    <div class="columns">
+      <div class="column is-one-third is-offset-one-third">
+        <input type="text" class="input" placeholder="Search" name="q" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results">
+      </div>
+    </div>
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Facility ID</th>
+          <th>Facility Name</th>
+          <th>Address</th>
+          <th>City/Town</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>County</th>
+          <th>Telephone Number</th>
+          <th>Hospital Type</th>
+          <th>Hospital Owner</th>
+          <th>Emergency Service</th>
+          <th>Maternity</th>
+          <th>Overall Rating</th>
+        </tr>
+      </thead>
+      <tbody id="results">
+          
+      </tbody>
+    </table>
+  </section>
+</body>
+
+</html>
