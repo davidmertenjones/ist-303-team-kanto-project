@@ -41,6 +41,16 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
+    role = db.Column(db.String(20), default='user')  # 'user', 'provider', 'admin'
+    
+    # Helper methods for role checking
+    @property
+    def is_admin(self):
+        return self.role == 'admin'
+    
+    @property
+    def is_provider(self):
+        return self.role == 'provider'
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
