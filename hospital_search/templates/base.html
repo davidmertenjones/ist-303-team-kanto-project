@@ -15,13 +15,9 @@
 <body>
   <section class="section">
     <div class="container">
-      <!-- simple nav -->
+      <!-- Top navigation (only auth links, no title) -->
       <nav class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <h1 class="title">HEALTH SERVICE CATALOG</h1>
-          </div>
-        </div>
+        <div class="level-left"></div>
         <div class="level-right">
           {% if not current_user.is_authenticated %}
           <div class="level-item">
@@ -31,8 +27,13 @@
             <a href="{{ url_for('signup') }}">Sign Up</a>
           </div>
           {% else %}
+          {% if current_user.is_admin %}
           <div class="level-item">
-            <a href="{{ url_for('profile') }}">Profile</a>
+            <a href="{{ url_for('admin_panel') }}">Admin Panel</a>
+          </div>
+          {% endif %}
+          <div class="level-item">
+            <a href="{{ url_for('home') }}">Home</a>
           </div>
           <div class="level-item">
             <a href="{{ url_for('logout') }}">Log Out</a>

@@ -112,6 +112,21 @@ class LoginForm(FlaskForm):
 def home():
     return render_template("home.html")
 
+#search_by_name - search page with input
+@app.route("/search-by-name")
+def search_by_name():
+    return render_template("search_by_name.html")
+
+#search_by_service - service selection page
+@app.route("/search-by-service")
+def search_by_service():
+    return render_template("search_by_service.html")
+
+#search_by_location - alias to search_by_name
+@app.route("/search-by-location")
+def search_by_location():
+    return render_template("search_by_name.html")
+
 #search - loads search results dynamically within home
 @app.route("/search")
 def search():
@@ -124,6 +139,12 @@ def search():
         results = []
 
     return render_template("search_results.html", results=results)
+
+#hospital_detail - show detailed view with reviews
+@app.route("/hospital/<fac_id>")
+def hospital_detail(fac_id):
+    hospital = Hospital.query.get_or_404(fac_id)
+    return render_template("hospital_detail.html", hospital=hospital)
 
 #signup - create new user, store in users table
 @ app.route('/signup', methods=['GET', 'POST'])
@@ -161,6 +182,40 @@ def login():
 @login_required
 def dashboard():
     return render_template('dashboard.html')
+
+#admin_panel - admin-only page to add new entries
+@app.route('/admin/panel', methods=['GET', 'POST'])
+@login_required
+def admin_panel():
+    # Check if user is admin
+    if not current_user.is_admin:
+        flash('Access denied. Admin privileges required.')
+        return redirect(url_for('home'))
+    
+    if request.method == 'POST':
+        # Handle form submission (add your logic here)
+        entry_type = request.form.get('entry_type')
+        name = request.form.get('name')
+        address = request.form.get('address')
+        providers = request.form.get('providers')
+        more_info = request.form.get('more_info')
+        
+        # TODO: Save to database
+        flash(f'Entry created: {name}')
+        return redirect(url_for('admin_panel'))
+    
+    # For now, pass an empty form object (you can create a proper WTForm later)
+    form = type('obj', (object,), {'hidden_tag': lambda: ''})()
+    return render_template('admin_panel.html', form=form)
+
+#admin_add_service - placeholder for adding services
+@app.route('/admin/add-service', methods=['GET', 'POST'])
+@login_required
+def admin_add_service():
+    if not current_user.is_admin:
+        flash('Access denied. Admin privileges required.')
+        return redirect(url_for('home'))
+    return redirect(url_for('admin_panel'))
 
 #logout - logs user out (won't be able to access dashboard without logging back in), returns to home
 @app.route('/logout', methods=['GET', 'POST'])

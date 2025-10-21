@@ -5,30 +5,29 @@
 {% block content %}
   <div class="catalog-shell">
     <div class="catalog-header">
-      <div class="catalog-title">{{ catalog_title }}</div>
+      <div class="catalog-title">HEALTH SERVICE CATALOG NAME</div>
 
-      <!-- only role-specific text here; auth links stay in base.html -->
-      {% if current_user.is_authenticated %}
-        <div class="user-welcome">Welcome, {{ current_user.username }}!</div>
-      {% endif %}
+      <div class="auth-section">
+        {% if current_user.is_authenticated %}
+          <div class="user-welcome">Welcome, {{ current_user.username }}!</div>
+          {% if current_user.is_provider %}
+            <a href="{{ url_for('dashboard') }}" class="auth-link">My facility</a>
+          {% endif %}
+          <a href="{{ url_for('logout') }}" class="auth-link">Log out</a>
+        {% endif %}
+      </div>
     </div>
 
     <div class="search-cards-row">
-      <div class="search-card"><div class="card-text">Search by<br/>Name</div></div>
-      <div class="search-card"><div class="card-text">Search by<br/>Service</div></div>
-      <div class="search-card"><div class="card-text">Search by<br/>Location</div></div>
+      <a href="{{ url_for('search_by_name') }}" class="search-card">
+        <div class="card-text">Search by<br/>Name</div>
+      </a>
+      <a href="{{ url_for('search_by_service') }}" class="search-card">
+        <div class="card-text">Search by<br/>Service</div>
+      </a>
+      <a href="{{ url_for('search_by_location') }}" class="search-card">
+        <div class="card-text">Search by<br/>Location</div>
+      </a>
     </div>
-
-    <div class="search-controls">
-      <form id="main-search-form" hx-get="/search" hx-trigger="keyup changed delay:500ms" hx-target="#results" autocomplete="off">
-        <input id="q-name" class="form-input" placeholder="Name" name="q_name" />
-        <input id="q-city" class="form-input" placeholder="City" name="q_city" />
-        <input id="q-zip" class="form-input" placeholder="ZIP" name="q_zip" />
-        <button id="searchBtn" class="btn-primary" type="submit">Search</button>
-      </form>
-    </div>
-
-    <h2 class="subtitle">Hospital Search by Facility Name / City / ZIP</h2>
-
   </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Search by Name/Location{% endblock %}
+
+{% block content %}
+  <div class="catalog-shell">
+    <h2>Search by name, city, or zip...</h2>
+    
+    <input 
+      type="text" 
+      class="form-input" 
+      placeholder="Enter name, city, or ZIP..." 
+      name="q" 
+      hx-get="/search" 
+      hx-trigger="keyup changed delay:500ms" 
+      hx-target="#results"
+      style="width: 100%; max-width: 400px; margin: 20px 0;">
+
+    <div id="results" class="results-grid"></div>
+  </div>
+{% endblock %}
