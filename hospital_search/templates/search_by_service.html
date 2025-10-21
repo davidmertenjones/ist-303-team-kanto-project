@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Search by Service{% endblock %}
+
+{% block content %}
+  <div class="catalog-shell">
+    <h1 style="font-size: 32px; margin-bottom: 40px;">Search by Service</h1>
+
+    <div class="search-cards-row">
+      <a href="/search?service=urgent_care" class="search-card">
+        <div class="card-text" style="font-size: 20px;">Urgent Care</div>
+      </a>
+      <a href="/search?service=emergency" class="search-card">
+        <div class="card-text" style="font-size: 20px;">Emergency</div>
+      </a>
+      <a href="/search?service=maternity" class="search-card">
+        <div class="card-text" style="font-size: 20px;">Maternity</div>
+      </a>
+      <a href="/search?service=general" class="search-card">
+        <div class="card-text" style="font-size: 20px;">General</div>
+      </a>
+    </div>
+
+    <div id="results" class="results-grid" style="margin-top: 40px;"></div>
+  </div>
+{% endblock %}
