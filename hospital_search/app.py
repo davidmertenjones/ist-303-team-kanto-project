@@ -57,7 +57,11 @@ class Hospital(db.Model):
     hosp_owner = db.Column(db.String(100), nullable=False)
     emergency = db.Column(db.String(100), nullable=False)
     maternity = db.Column(db.String(100), nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.String(2), nullable=False)
+    urgent_care = db.Column(db.Integer, nullable=False)
+    psychiatric = db.Column(db.Integer, nullable=False)
+    childrens = db.Column(db.Integer, nullable=False)
+    veterans = db.Column(db.Integer, nullable=False)
 
 #### FORMS ####
 

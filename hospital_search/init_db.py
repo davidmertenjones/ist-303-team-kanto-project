@@ -37,6 +37,10 @@ class Hospital(db.Model):
     emergency = db.Column(db.String(100), nullable=False)
     maternity = db.Column(db.String(100), nullable=False)
     rating = db.Column(db.Integer, nullable=False)
+    urgent_care = db.Column(db.Integer, nullable=False)
+    psychiatric = db.Column(db.Integer, nullable=False)
+    childrens = db.Column(db.Integer, nullable=False)
+    veterans = db.Column(db.Integer, nullable=False)
 
 def load_data():
 
@@ -61,7 +65,11 @@ def load_data():
             hosp_owner=h['hosp_owner'], 
             emergency=h['emergency'], 
             maternity=h['maternity'],
-            rating=h['rating']
+            rating=h['rating'],
+            urgent_care=h['urgent_care'],
+            psychiatric=h['psychiatric'],
+            childrens=h['childrens'],
+            veterans=h['veterans']
         )
 
         db.session.add(hospital)
