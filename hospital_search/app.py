@@ -106,6 +106,21 @@ class LoginForm(FlaskForm):
 def home():
     return render_template("home.html")
 
+#search_by_name - search page with input
+@app.route("/search-by-name")
+def search_by_name():
+    return render_template("search_by_name.html")
+
+#search_by_service - service selection page
+@app.route("/search-by-service")
+def search_by_service():
+    return render_template("search_by_service.html")
+
+#search_by_location - alias to search_by_name
+@app.route("/search-by-location")
+def search_by_location():
+    return render_template("search_by_name.html")
+
 #search - loads search results dynamically within home
 @app.route("/search")
 def search():

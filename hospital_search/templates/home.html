@@ -29,5 +29,21 @@
         <div class="card-text">Search by<br/>Location</div>
       </a>
     </div>
+
+    <!-- Search Bar (from old version) -->
+    <div style="margin: 40px 0; text-align: center;">
+      <input 
+        type="text" 
+        class="form-input" 
+        placeholder="Search by facility name, city, or zip code..." 
+        name="q" 
+        hx-get="/search" 
+        hx-trigger="keyup changed delay:500ms" 
+        hx-target="#results"
+        style="width: 100%; max-width: 500px; margin: 0 auto;">
+    </div>
+
+    <!-- Results Container (from old version) -->
+    <div id="results" class="results-grid"></div>
   </div>
 {% endblock %}
