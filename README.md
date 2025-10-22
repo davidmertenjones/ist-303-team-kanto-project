@@ -1,3 +1,40 @@
+# How to run the application
+## Environment to run the application
+•	python 3.13.5
+•	pip 25.1
+
+## Steps to run the application
+1.	Clone the entire project source code from github by running command below in command prompt. Make sure `git` is installed on your local machine.
+```
+git clone https://github.com/davidmertenjones/ist-303-team-kanto-project.git
+```
+2.	In command prompt, access the the directory " ist-303-team-kanto-project".
+```
+cd ist-303-team-kanto-project
+```
+3.	Create a virtual environment `venv`. (Note: In command prompt, make sure you are accessing same root folder where you have cloned source code in step 1.)
+```
+python -m env venv
+```
+4.	Activate the virtual environment on Mac or Linux OS.
+```
+source venv/bin/activate
+```
+5.	Install the packages you need from requirements.txt. 
+```
+(venv)% pip install -r requirements.txt
+```
+6.	Run the Flask application on your machine
+```
+flask –app app.py run
+```
+7.	The Flask application is accessible from http://127.0.0.1:5000
+8.	Database is available under the “hospital_search/instance” folder named “database.db”.  If database is not available or accidentally deleted, you can setup the database using the `init_db.py` script.
+```
+python init_db.py
+```  
+
+
 # A Hospital Facilities Catalog 
 
 ## PART A
