@@ -1,7 +1,7 @@
 # How to run the application
 ## Environment to run the application
-•	python 3.13.5
-•	pip 25.1
+*	python 3.13.5
+*	pip 25.1
 
 ## Steps to run the application
 1.	Clone the entire project source code from github by running command below in command prompt. Make sure `git` is installed on your local machine.
