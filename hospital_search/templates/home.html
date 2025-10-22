@@ -19,14 +19,11 @@
     </div>
 
     <div class="search-cards-row">
-      <a href="{{ url_for('search_by_name') }}" class="search-card">
-        <div class="card-text">Search by<br/>Name</div>
+      <a href="{{ url_for('search_by_name') }}" class="search-card" style="width:223px; height:153px; background:#D9D9D9; display:flex; align-items:center; justify-content:center;">
+        <div class="card-text">Search for Hospital<br>by Name, City or ZIP</div>
       </a>
-      <a href="{{ url_for('search_by_service') }}" class="search-card">
-        <div class="card-text">Search by<br/>Service</div>
-      </a>
-      <a href="{{ url_for('search_by_location') }}" class="search-card">
-        <div class="card-text">Search by<br/>Location</div>
+      <a href="{{ url_for('search_by_service') }}" class="search-card" style="width:223px; height:153px; background:#D9D9D9; display:flex; align-items:center; justify-content:center;">
+        <div class="card-text">Browse by Type</div>
       </a>
     </div>
 
