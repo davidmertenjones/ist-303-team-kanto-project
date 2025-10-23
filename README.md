@@ -185,23 +185,30 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
       * Search hospital facilities by name
       * Search hospital facilities by city
       * Search hospital facilities by ZIP
+      * Return results
     * App development (7 days) – Aashish, David
       * Implement schema and ingest CSV
       * Create a Skelton Flask application with a landing page to:
          * Search hospital facilities
-         * Browse hospital by facility type
+         * Return results
       * Add option to search hospital by name, city, or ZIP code
     * Define acceptance criteria (1 day) - Aishwarya
     * Test development (3 days) - Jen
       
-2. As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
-    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-      * Search hospital facilities by name
-      * Search hospital facilities by city
-      * Search hospital facilities by ZIP
-    * App development (3 days) – Aashish, David
-      * Build search & results UI
-    * Test development (2 days) - Jen
+2.  As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
+    * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
+      * Add option to browse hospital by facility on the landing page
+      * Create a new page to allow users to browse hospitals by facility type
+         * Urgent care
+         * Maternity care
+         * Pediatric services
+         * Veteran care	
+         * Psychiatric services 	
+         * Return results		
+    * App development (7 days) – Aashish, David
+    * Define acceptance criteria – Aishwarya
+    * Test development (3 days) - Jen
+
 
 
 #### Iteration 2
