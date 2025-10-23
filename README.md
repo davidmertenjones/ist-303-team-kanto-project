@@ -285,6 +285,10 @@ Refer to [“Steps to run and test the application”](#steps-to-run-and-test-th
 https://github.com/users/davidmertenjones/projects/1
 
 ### Test Strategies
-
+| User Stories | Description | Testing Strategy |
+| :------- | :------- | :------- |
+| 1     | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | Text    |
+| 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Text   |
+| 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | Text   |
 
 
