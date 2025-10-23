@@ -35,12 +35,12 @@ python init_db.py
 ```  
 
 
-# A Hospital Facilities Catalog 
+# A Hospital Facilities Catalog
 
 ## PART A
 
 ### <ins>Overview</ins>  
-The Hospital Facilities Catalog is a web application that standardizes how hospital facilities describe and publish their available medical services (e.g., imaging, labs, surgery centers, urgent care), making it easy for patients, providers, and administrators to discover, compare, and manage care options. The first release will focus on the Los Angeles area.
+The Hospital Facilities Catalog is a web application that standardizes how hospital facilities describe and publish their available medical services (e.g., urgent care, maternity care, children pediatrics, veterans’ facilities, and psychiatric facilities), making it easy for patients, providers, and administrators to discover, compare, and manage care options. The first release will focus on the Los Angeles area.
 
 ### <ins>Team Name</ins>  
 Team Kanto
@@ -50,64 +50,50 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
 
 ### <ins>Stakeholders</ins>  
 * Patients who need to browse, compare, and manage care options can quickly find the right facility or service.
+* IT and Application Support Teams who ensure infrastructure, security, integration, and smooth operations.
 * Healthcare Providers (physicians, nurses, specialists, therapists) who deliver and coordinate care can quickly compare facilities and streamline referrals.
 * Hospital/Clinic Administrators who manage service offerings, availability, and workflows.  
-* IT and Application Support Teams who ensure infrastructure, security, integration, and smooth operations.  
 * Healthcare Executives/Leadership who oversee strategy can leverage catalog insights to guide strategic planning and resource allocation.
 
 ### <ins>User Stories (MVP)</ins>  
 
+### Search Hospital Facilities by Name, City, or ZIP
 
-### Browse Available Services by Hospital Facilities
+1.  As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
+  * Priority: 1	  
+  * Estimate: Requires the service database and search functionality so users can filter services by location field. Estimated 5.5 days total.  
+    * Extend service database with location fields: 1 day  
+    * Add database query logic to support filtering by location: 2 days  
+    * UI development for location search and results display: 2 days
 
-* As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.  
+### Browse Hospital by Facility Type
+
+2. As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
   * Priority: 1	  
   * Estimate: Requires database of services as well as system to retrieve records based on user input through UI. Time spent to set up database and integrate search feature will be shared among several user tasks. Estimated 7.5 days total.  
     * Design core service database schema: 2 days  
     * Develop backend search for query processing and filtering: 3 days  
     * Build UI components for search and results: 2 days
 
-### Search Hospital Facilities by Name, City, or ZIP
-
-* As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
-  * Priority: 1	  
-  * Estimate: Requires expansion of the service database and search functionality so users can filter services by location field. Estimated 5.5 days total.  
-    * Extend service database with location fields: 1 day  
-    * Add database query logic to support filtering by location: 2 days  
-    * UI development for location search and results display: 2 days
-
 ### View Detailed Provider Information
 
-* As a patient, I want to view detailed provider information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
-  
+3. As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care.  
   * Priority: 1	  
   * Estimate: Requires expansion of the service database with detailed provider information and creating a detail page to display the information to users. Estimated 3.5 days total.  
     * Extend database with additional provider information fields: 1 day  
     * UI for provider detail page layout: 2 days
 
-### Create Account
+### Create New Accounts
 
-* As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
-  
+4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
   * Priority: 2  
   * Estimate: Requires implementing user registration and login with role-based access, email verification, and secure password handling. Estimated 6.5 days total.  
     * Create a UI page for user account creation: 3 days  
     * Extend database with additional user fields: username, email, location of residence, etc: 3 days
 
-### Ratings/Reviews
+### View Provider Services
 
-* As a patient, I want to view and provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
-
-  * Priority: 2	  
-  * Estimate: Requires creation of reviews and ratings system linked to users, along with UI for displaying that feedback. Estimated 6.5 days total.  
-    * Create reviews data model: 2 days  
-    * UI for review submission form and review display: 2 days  
-    * UI for administrator moderation controls: 2 days
-
-### Provider Offerings
-
-* As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
-
+5. As a healthcare provider, I want to view the types of services available at my facility (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can recommend appropriate options to patients.
   * Priority: 2	  
   * Estimate: Creating an alternate view of the catalogue specifically for providers. Estimated 3.5 days total.  
     * Filter services by provider/facility: 1 day  
@@ -115,13 +101,23 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     
 ### Update Provider Offerings
 
-* As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
-
+6. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
   * Priority: 2	  
   * Estimate: Functionality for administrators to manage catalogue entries through adding, editing, or removing services through an administrator panel. Estimated 5.5 days total.  
     * Extend database logic to support create/update/delete operations: 1 day  
     * Implement backend logic to edit database according to management actions: 2 days  
     * UI for administrator panel: 2 days
+
+### Enable User Ratings and Reviews
+
+7. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
+
+  * Priority: 2	  
+  * Estimate: Requires creation of reviews and ratings system linked to users, along with UI for displaying that feedback. Estimated 6.5 days total.  
+    * Create reviews data model: 2 days  
+    * UI for review submission form and review display: 2 days  
+    * UI for administrator moderation controls: 2 days
+
 
 ### <ins>User Stories (Non-MVP)</ins>  
 
@@ -170,6 +166,8 @@ The Minimum Viable Product (MVP) will deliver all Priority 1 and Priority 2 user
 * Time Estimate — MVP: 38.5 days  
 * Time Estimate — Non-MVP: 24 days  
 * Total Estimated Effort: 62.5 days
+
+
 
 ## PART B
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
