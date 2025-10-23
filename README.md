@@ -277,3 +277,14 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
     * App development (3 days) – Aashish, David
     * Test development (2 days) - Jen
     * Demo preparation (7 days) - Team
+  
+## PART C
+Refer to “Steps to run and test the application” section of this README to run and test the application.
+
+### Project Dashboard
+https://github.com/users/davidmertenjones/projects/1/views/1
+
+### Test Strategies
+
+
+
