@@ -29,6 +29,7 @@ source venv/bin/activate
 flask –app app.py run
 ```
 7.	The Flask application is accessible from http://127.0.0.1:5000
+   
 8.	Database is available under the “hospital_search/instance” folder named “database.db”.  If database is not available or accidentally deleted, you can setup the database using the `init_db.py` script.
 ```
 python init_db.py
