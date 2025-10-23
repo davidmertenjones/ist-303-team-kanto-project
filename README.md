@@ -1,4 +1,4 @@
-# How to run the application
+# Steps to run the application
 ## Environment to run the application
 *	python 3.13.5
 *	pip 25.1
@@ -35,7 +35,7 @@ flask –app app.py run
 python init_db.py
 ```  
 
-## Steps to test the application
+# Steps to test the application
 1.	Install pytest, pytest-flask, and pytest-coverage if they are not already installed
 2.	In command prompt, navigate to the directory “hospital_search”
 ```
