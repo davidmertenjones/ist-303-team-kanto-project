@@ -285,10 +285,40 @@ Refer to [“Steps to run and test the application”](#steps-to-run-and-test-th
 https://github.com/users/davidmertenjones/projects/1
 
 ### Test Strategies
-| User Stories | Description | Testing Strategy |
-| :------- | :------- | :------- |
-| 1     | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | Text    |
-| 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Text   |
-| 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | Text   |
+**User Story 1 : Search Hospital Facilities by Name, City, or ZIP**
+As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.
+
+**Acceptance Criteria:** 
+* A search option allows users to search hospitals by name, city, or ZIP code in Los Angeles
+* The results page should display the name, address, phone number, and available services for the selected hospital facility
+
+**Possible Testing options:**  
+* Partial matches 
+* No results
+* Case sensitivity
+* Fuzzy search 
+* Information that is pulled from the database accurately reflects the user’s search input
+
+**User Story 2 : Browse Hospital by Facility Type**
+As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
+
+**Acceptance Criteria:** 
+* Provides an option to allows users to browse hospitals by medical speciality.
+* The search result should display a list of hospital facilities based on the medical specialty selected by the user.
+* The results page should display the name, address, phone number, and available services for the selected hospital facility
+
+** User story 3 : View Detailed Provider Information
+As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care.  
+
+**Acceptance Criteria:**
+* Each hospital facility returned based on the user's selection should include details such as the facility name, address, phone number, and available services.
+* If no results are found, a clear message such as “No matching services found” is displayed.
+
+**Summary**
+| 1     | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | * Implement automated tests to validate user input handling and search logic. * Perform manual UI testing to ensure users can search hospital facilities by name, city, or ZIP code within Los Angeles. * Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria. |
+| 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Perform manual UI testing to ensure * The application provides an option for users to browse hospitals by medical specialty. * The results page displays a list of hospital facilities that match the selected medical specialty. * Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria. |
+| 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | * Each hospital facility listed includes details such as name, address, phone number, available services. * If no results are found, a clear message such as “No matching services found” is displayed.  |
+<img width="468" height="293" alt="image" src="https://github.com/user-attachments/assets/58dd6ed9-3a42-4cc0-bb4d-a97551bffecf" />
+
 
 
