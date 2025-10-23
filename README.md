@@ -315,8 +315,7 @@ As a patient, I want to view detailed provider information including name, addre
 * If no results are found, a clear message such as “No matching services found” is displayed.
 
 **Summary**
-| | <div style="width: 500px;">Header 3</div> |<div style="width: 500px;">Header 3</div> 
-| User Stories | Description | Testing Strategy |
+| <div style="width: 100px;">User Stories</div> | <div style="width: 500px;">Description</div> |<div style="width: 500px;">Testing Strategy</div> |
 | :----- | :------ | :---------- |
 | 1   | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | <ul><li>Implement automated tests to validate user input handling and search logic.</li><li>Perform manual UI testing to ensure users can search hospital facilities by name, city, or ZIP code within Los Angeles.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
 | 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Perform manual UI testing to ensure: <ul><li>The application provides an option for users to browse hospitals by medical specialty.</li><li>The results page displays a list of hospital facilities that match the selected medical specialty.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
