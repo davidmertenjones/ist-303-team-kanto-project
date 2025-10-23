@@ -206,7 +206,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
          * Psychiatric services 	
       * Return results		
     * App development (7 days) – Aashish, David
-    * Define acceptance criteria – Aishwarya
+    * Define acceptance criteria (1 day) – Aishwarya
     * Test development (3 days) - Jen
 
 
