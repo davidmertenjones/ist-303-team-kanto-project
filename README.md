@@ -204,7 +204,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
          * Pediatric services
          * Veteran care	
          * Psychiatric services 	
-         * Return results		
+      * Return results		
     * App development (7 days) – Aashish, David
     * Define acceptance criteria – Aishwarya
     * Test development (3 days) - Jen
