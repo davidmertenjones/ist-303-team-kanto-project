@@ -184,8 +184,7 @@ The Minimum Viable Product (MVP) will deliver all Priority 1 and Priority 2 user
 ## PART B
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
- 
-### <ins>Priority 1</ins>
+### <ins>Milestone 1</ins>
 #### Milestone 1 Iteration 1 
 1.  As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
     * Identify publicly source facility & services datasets (3 days) - Aishwarya
@@ -281,10 +280,10 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
 ## PART C
 Refer to [“Steps to run and test the application”](#steps-to-run-and-test-the-application) section of this README to run and test the application.
 
-### Project Dashboard
+### <ins>Project Dashboard>/ins>
 https://github.com/users/davidmertenjones/projects/1
 
-### Test Strategies
+### <ins>Test Strategies</ins>
 **User Story 1 : Search Hospital Facilities by Name, City, or ZIP**
 As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.
 
@@ -314,13 +313,21 @@ As a patient, I want to view detailed provider information including name, addre
 * Each hospital facility returned based on the user's selection should include details such as the facility name, address, phone number, and available services.
 * If no results are found, a clear message such as “No matching services found” is displayed.
 
-###Test Strategies Summary
+#### Test Strategies Summary
 | <div style="width: 100px;">User Stories</div> | <div style="width: 500px;">Description</div> |<div style="width: 500px;">Testing Strategy</div> |
 | :----- | :------ | :---------- |
 | 1   | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | <ul><li>Implement automated tests to validate user input handling and search logic.</li><li>Perform manual UI testing to ensure users can search hospital facilities by name, city, or ZIP code within Los Angeles.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
 | 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Perform manual UI testing to ensure: <ul><li>The application provides an option for users to browse hospitals by medical specialty.</li><li>The results page displays a list of hospital facilities that match the selected medical specialty.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
 | 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | <ul><li>Each hospital facility listed includes details such as name, address, phone number, available services.</li><li>If no results are found, a clear message such as “No matching services found” is displayed.</li></ul> |
 
-###Burndown Chart as of Week 8
+### <ins>Velocity</ins> 
+* Timeline: milestone 1
+* Iteration: Every two weeks
+* User Stories: 3
+* Velocity: 22.7%
+  * Scheduled Story Points: 22 story points as of Week 8
+  * Completed Story Points: 5 story points as of Week 8
+* Burndown Chart as of Week 8:\
+
 
 
