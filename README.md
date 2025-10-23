@@ -237,7 +237,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 ### <ins>Milestone 2</ins>
 The user stories for Milestone 2.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
-4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
+4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
     * Login option
     * App development (7 days) – Aashish, David
@@ -245,20 +245,20 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
       * Enable role-based access
     * Test development (2 days) - Jen
 
-5. As a patient, I want to view and provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
+5. As a healthcare provider, I want to view the types of services available at my facility (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can recommend appropriate options to patients.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View ratings and feedback
       * Provide ratings and feedback	
     * App development (3 days) – Aashish, David
     * Test development (2 days) - Jen
 
-6. As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
+6. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View catalog of services
     * App development (2 days) – Aashish, David
     * Test development (2 days) - Jen
 
-7. As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
+7. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
       * Add services
       * Remove services
