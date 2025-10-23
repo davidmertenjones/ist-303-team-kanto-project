@@ -210,13 +210,18 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
     * Test development (3 days) - Jen
 
 
-
-#### Iteration 2
-3. As a patient, when I select a facility, I want to view detailed information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
+#### Milestone 1 Iteration 2
+3. As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care.  
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-      * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
-    * App development (3 days) – Aashish, David
-    * Test development (2 days) - Jen
+      * Return details provide information when user selects a hospital facility from the returned list which includes:	
+         * Hospital facility name
+         * Address
+         * Phone number
+         * Available service types
+   * App development (7 days) – Aashish, David
+   * Define acceptance criteria – Aishwarya
+   * Test development (3 days) - Jen
+
       
 ### <ins>Velocity</ins> 
 * Timeline: 4 weeks to milestone 1
@@ -229,7 +234,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
   https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a 
 
 
-### <ins>Priority 2</ins>
+### <ins>Milestone 2</ins>
 The user stories for Milestone 2.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
 4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
