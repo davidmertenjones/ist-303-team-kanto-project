@@ -177,7 +177,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 ### <ins>Priority 1</ins>
 #### Milestone 1 Iteration 1 
 1.  As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
-    * Identify/publicly source facility & services datasets (3 days) - Aishwarya
+    * Identify publicly source facility & services datasets (3 days) - Aishwarya
     * Define data schema, clean up data and create CSV (4 days) - David
       * Added function to convert .csv files to sqlite3 database - David
       * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
