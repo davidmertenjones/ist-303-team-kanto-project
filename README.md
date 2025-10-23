@@ -175,23 +175,27 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
 
  
 ### <ins>Priority 1</ins>
-#### Iteration 1 
-1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
+#### Milestone 1 Iteration 1 
+1.  As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
     * Define scope and objectives (0.5 days)
     * Identify stakeholders (patients, providers, administrators, IT teams, executives) (0.5 day)
     * Assign team roles and responsibilities (0.5 day)
     * Create initial timeline and milestones (0.5 day) 
     * Identify/publicly source facility & services datasets (3 days) - Aishwarya
     * Define data schema, clean up data and create CSV (4 days) - David
-        * Added function to convert .csv files to sqlite3 database - David
-        * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
+      * Added function to convert .csv files to sqlite3 database - David
+      * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
-      * Decide care pathing: urgent vs. non-urgent flows.
-        * Urgent care: return hospitals/urgent care centers that provide urgent services
-        * Non-urgent care: browse services (e.g., labs, imaging, surgery) and show which hospitals provide them
+      * Search hospital facilities by name
+      * Search hospital facilities by city
+      * Search hospital facilities by ZIP
     * App development (7 days) – Aashish, David
-      * Implement schema and ingest CSV.
-      * Build search & results UI for urgent and non-urgent flows.
+      * Implement schema and ingest CSV
+      * Create a Skelton Flask application with a landing page to:
+         * Search hospital facilities
+         * Browse hospital by facility type
+      * Add option to search hospital by name, city, or ZIP code
+    * Define acceptance criteria (1 day) - Aishwarya
     * Test development (3 days) - Jen
     * Document README with setup (1 day) - Aashish, David
     * Validate README with setup (1 day) - Jennifer, Eva, Aishwarya
