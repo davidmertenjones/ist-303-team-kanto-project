@@ -92,7 +92,7 @@ David Merten-Jones, Eva Mui, Aashish Sunar, Aishwarya Pandian, Jennifer Long
     * Create a UI page for user account creation: 3 days  
     * Extend database with additional user fields: username, email, location of residence, etc: 3 days
 
-### View Provider Services
+### View Available Services
 
 5. As a healthcare provider, I want to view the types of services available at my facility (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can recommend appropriate options to patients.
   * Priority: 2	  
