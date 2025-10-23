@@ -197,7 +197,7 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
       
 2.  As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
-      * Add option to browse hospital by facility on the landing page
+      * Add option to browse hospital by facility type on the landing page
       * Create a new page to allow users to browse hospitals by facility type
          * Urgent care
          * Maternity care
