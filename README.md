@@ -282,7 +282,7 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
 Refer to [“Steps to run and test the application”](#steps-to-run-and-test-the-application) section of this README to run and test the application.
 
 ### Project Dashboard
-https://github.com/users/davidmertenjones/projects/1/views/1
+https://github.com/users/davidmertenjones/projects/1
 
 ### Test Strategies
 
