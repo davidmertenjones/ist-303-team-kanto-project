@@ -4,12 +4,12 @@
 
 {% block content %}
   <div class="catalog-shell">
-    <h2>Search by name, city, or zip...</h2>
+    <h2 style="font-size: 32px; margin-bottom: 40px;">Search for Hospital<br>by Name, City or ZIP</h2>
     
     <input 
       type="text" 
       class="form-input" 
-      placeholder="Enter name, city, or ZIP..." 
+      placeholder="Search by facility name, city, or ZIP code..." 
       name="q" 
       hx-get="/search" 
       hx-trigger="keyup changed delay:500ms" 
