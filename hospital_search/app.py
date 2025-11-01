@@ -114,7 +114,46 @@ def search_by_name():
 #search_by_service - service selection page
 @app.route("/search-by-service")
 def search_by_service():
+    service = request.args.get("service")
+    print(service)
     return render_template("search_by_service.html")
+
+#### These five functions should be refactored to one function ####
+# service_urgent
+# service_maternity
+# service_childrens
+# service_veterans
+# service_psychiatric
+
+@app.route("/service_urgent")
+def service_urgent():
+    results = Hospital.query.filter(Hospital.urgent_care.icontains(1)).limit(100).all()
+    return render_template("search_results.html", results=results)
+
+@app.route("/service_maternity")
+def service_maternity():
+    results = Hospital.query.filter(Hospital.maternity.icontains(1)).limit(100).all()
+    return render_template("search_results.html", results=results)
+
+@app.route("/service_childrens")
+def service_pediatric():
+    results = Hospital.query.filter(Hospital.childrens.icontains(1)).limit(100).all()
+    return render_template("search_results.html", results=results)
+
+@app.route("/service_veterans")
+def service_veterans():
+    results = Hospital.query.filter(Hospital.veterans.icontains(1)).limit(100).all()
+    return render_template("search_results.html", results=results)
+
+@app.route("/service_psychiatric")
+def service_psychiatric():
+    results = Hospital.query.filter(Hospital.urgent_care.icontains(1)).limit(100).all()
+    return render_template("search_results.html", results=results)
+
+
+
+
+
 
 #search_by_location - alias to search_by_name
 @app.route("/search-by-location")
@@ -135,7 +174,7 @@ def search():
     return render_template("search_results.html", results=results)
 
 #signup - create new user, store in users table
-@ app.route('/signup', methods=['GET', 'POST'])
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
 

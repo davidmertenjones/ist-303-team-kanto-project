@@ -5,7 +5,7 @@
 {% block content %}
   <div class="catalog-shell">
     <div class="catalog-header">
-      <div class="catalog-title">HEALTH SERVICE CATALOG NAME</div>
+      <h1 class="catalog-title" style="font-size: 32px; margin-bottom: 40px;">Hospital Facilities Catalog</h1>
 
       <div class="auth-section">
         {% if current_user.is_authenticated %}
@@ -32,7 +32,7 @@
       <input 
         type="text" 
         class="form-input" 
-        placeholder="Search by facility name, city, or zip code..." 
+        placeholder="Search by facility name, city, or ZIP code..." 
         name="q" 
         hx-get="/search" 
         hx-trigger="keyup changed delay:500ms" 

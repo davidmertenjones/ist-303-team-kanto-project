@@ -1,4 +1,4 @@
-# How to run the application
+# Steps to run and test the application
 ## Environment to run the application
 *	python 3.13.5
 *	pip 25.1
@@ -34,6 +34,17 @@ flask –app app.py run
 ```
 python init_db.py
 ```  
+
+## Steps to test the application
+1.	Install pytest, pytest-flask, and pytest-coverage if they are not already installed
+2.	In command prompt, navigate to the directory “hospital_search”
+```
+cd hospital_search
+```
+3.	Use the command below to run the tests 
+```
+pytest
+```
 
 
 # A Hospital Facilities Catalog
@@ -173,45 +184,54 @@ The Minimum Viable Product (MVP) will deliver all Priority 1 and Priority 2 user
 ## PART B
 The user stories for Milestone 1.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
- 
-### <ins>Priority 1</ins>
-#### Iteration 1 
-1.  As a patient, I want to browse available services and find out which hospitals provide them (e.g., lab tests, imaging, surgery centers, urgent care) so I can quickly find what I need.
-    * Define scope and objectives (0.5 days)
-    * Identify stakeholders (patients, providers, administrators, IT teams, executives) (0.5 day)
-    * Assign team roles and responsibilities (0.5 day)
-    * Create initial timeline and milestones (0.5 day) 
-    * Identify/publicly source facility & services datasets (3 days) - Aishwarya
+### <ins>Milestone 1</ins>
+#### Milestone 1 Iteration 1 
+1.  As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
+    * Identify publicly source facility & services datasets (3 days) - Aishwarya
     * Define data schema, clean up data and create CSV (4 days) - David
-        * Added function to convert .csv files to sqlite3 database - David
-        * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
+      * Added function to convert .csv files to sqlite3 database - David
+      * see [database_setup](https://github.com/davidmertenjones/ist-303-team-kanto-project/edit/main/README.md#:~:text=HospitalGenInfo-,database_setup,-2025%2D09%2D08)
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
-      * Decide care pathing: urgent vs. non-urgent flows.
-        * Urgent care: return hospitals/urgent care centers that provide urgent services
-        * Non-urgent care: browse services (e.g., labs, imaging, surgery) and show which hospitals provide them
-    * App development (7 days) – Aashish, David
-      * Implement schema and ingest CSV.
-      * Build search & results UI for urgent and non-urgent flows.
-    * Test development (3 days) - Jen
-    * Document README with setup (1 day) - Aashish, David
-    * Validate README with setup (1 day) - Jennifer, Eva, Aishwarya
-    * Create burndown chart (1day) - Eva
-
-2. As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.  
-    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * Search hospital facilities by name
       * Search hospital facilities by city
       * Search hospital facilities by ZIP
-    * App development (3 days) – Aashish, David
-      * Build search & results UI
-    * Test development (2 days) - Jen
+      * Return results
+    * App development (7 days) – Aashish, David
+      * Implement schema and ingest CSV
+      * Create a Skelton Flask application with a landing page to:
+         * Search hospital facilities
+         * Return results
+      * Add option to search hospital by name, city, or ZIP code
+    * Define acceptance criteria (1 day) - Aishwarya
+    * Test development (3 days) - Jen
+      
+2.  As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
+    * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
+      * Add option to browse hospital by facility type on the landing page
+      * Create a new page to allow users to browse hospitals by facility type
+         * Urgent care
+         * Maternity care
+         * Pediatric services
+         * Veteran care	
+         * Psychiatric services 	
+      * Return results		
+    * App development (7 days) – Aashish, David
+    * Define acceptance criteria (1 day) – Aishwarya
+    * Test development (3 days) - Jen
 
-#### Iteration 2
-3. As a patient, when I select a facility, I want to view detailed information including name, phone, fax, address, website, hours of operation, and available services so that I have all the necessary details to make informed care decisions.
+
+#### Milestone 1 Iteration 2
+3. As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care.  
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-      * Return hospital facilities information including name, phone, fax, address, website, hours of operation, and available services 
-    * App development (3 days) – Aashish, David
-    * Test development (2 days) - Jen
+      * Return details provide information when user selects a hospital facility from the returned list which includes:	
+         * Hospital facility name
+         * Address
+         * Phone number
+         * Available service types
+   * App development (7 days) – Aashish, David
+   * Define acceptance criteria (1 day) – Aishwarya
+   * Test development (3 days) - Jen
+
       
 ### <ins>Velocity</ins> 
 * Timeline: 4 weeks to milestone 1
@@ -224,10 +244,10 @@ The user stories for Milestone 1.0 are broken into tasks, with team members assi
   https://github.com/user-attachments/assets/8bb94f03-312c-4cc0-9382-d82f9fe2f27a 
 
 
-### <ins>Priority 2</ins>
+### <ins>Milestone 2</ins>
 The user stories for Milestone 2.0 are broken into tasks, with team members assigned and set milestone targets for each iteration.
 
-4. As a user (patient, provider, or administrator), I want the option to create an account so that I can access features and role-specific tools.  
+4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
     * Login option
     * App development (7 days) – Aashish, David
@@ -235,20 +255,20 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
       * Enable role-based access
     * Test development (2 days) - Jen
 
-5. As a patient, I want to view and provide ratings or feedback on completed services so that I can share my experience with others and the hospital.  
+5. As a healthcare provider, I want to view the types of services available at my facility (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can recommend appropriate options to patients.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View ratings and feedback
       * Provide ratings and feedback	
     * App development (3 days) – Aashish, David
     * Test development (2 days) - Jen
 
-6. As a provider, I want to view the catalog of services offered in my facility so that I can recommend appropriate options to patients.  
+6. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View catalog of services
     * App development (2 days) – Aashish, David
     * Test development (2 days) - Jen
 
-7. As an administrator, I want to add, edit, or remove services in the catalog so that offerings remain accurate and up to date.  
+7. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
       * Add services
       * Remove services
@@ -256,3 +276,53 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
     * App development (3 days) – Aashish, David
     * Test development (2 days) - Jen
     * Demo preparation (7 days) - Team
+  
+## PART C
+Refer to [“Steps to run and test the application”](#steps-to-run-and-test-the-application) section of this README to run and test the application.
+
+### <ins>Project Dashboard>/ins>
+https://github.com/users/davidmertenjones/projects/1
+
+### <ins>Test Strategies</ins>
+**User Story 1 : Search Hospital Facilities by Name, City, or ZIP**
+As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need.
+
+**Acceptance Criteria:** 
+* A search option allows users to search hospitals by name, city, or ZIP code in Los Angeles
+* The results page should display the name, address, phone number, and available services for the selected hospital facility
+
+**Possible Testing options:**  
+* Partial matches 
+* No results
+* Case sensitivity
+* Fuzzy search 
+* Information that is pulled from the database accurately reflects the user’s search input
+
+**User Story 2 : Browse Hospital by Facility Type**
+As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need.
+
+**Acceptance Criteria:** 
+* Provides an option to allows users to browse hospitals by medical speciality.
+* The search result should display a list of hospital facilities based on the medical specialty selected by the user.
+* The results page should display the name, address, phone number, and available services for the selected hospital facility
+
+** User story 3 : View Detailed Provider Information
+As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care.  
+
+**Acceptance Criteria:**
+* Each hospital facility returned based on the user's selection should include details such as the facility name, address, phone number, and available services.
+* If no results are found, a clear message such as “No matching services found” is displayed.
+
+#### Test Strategies Summary
+| <div style="width: 100px;">User Stories</div> | <div style="width: 500px;">Description</div> |<div style="width: 500px;">Testing Strategy</div> |
+| :----- | :------ | :---------- |
+| 1   | As a patient, I want to search hospital facilities by name, city, or ZIP code in Los Angeles so I can quickly find the medical facility I need. | <ul><li>Implement automated tests to validate user input handling and search logic.</li><li>Perform manual UI testing to ensure users can search hospital facilities by name, city, or ZIP code within Los Angeles.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
+| 2   | As a patient, I want to browse hospitals by facility type (e.g., urgent care, maternity care, pediatric services, veteran care, and psychiatric services) so I can quickly find the healthcare services I need. | Perform manual UI testing to ensure: <ul><li>The application provides an option for users to browse hospitals by medical specialty.</li><li>The results page displays a list of hospital facilities that match the selected medical specialty.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
+| 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | <ul><li>Each hospital facility listed includes details such as name, address, phone number, available services.</li><li>If no results are found, a clear message such as “No matching services found” is displayed.</li></ul> |
+
+### <ins>Burndown Chart</ins> 
+* Burndown Chart as of Week 8:\
+  https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%208.png
+
+
+

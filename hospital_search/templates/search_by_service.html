@@ -1,26 +1,60 @@
 {% extends 'base.html' %}
 
-{% block head_title %}Search by Service{% endblock %}
+{% block head_title %}Browse by Type{% endblock %}
 
 {% block content %}
   <div class="catalog-shell">
-    <h1 style="font-size: 32px; margin-bottom: 40px;">Search by Service</h1>
+    <h1 style="font-size: 32px; margin-bottom: 40px;">Browse by Type</h1>
 
     <div class="search-cards-row">
-      <a href="/search?service=urgent_care" class="search-card">
-        <div class="card-text" style="font-size: 20px;">Urgent Care</div>
+      
+      <a hx-get="/service_urgent" class="search-card" style="font-size: 20px;" hx-trigger="click" hx-target="#results" service="urgent_care" name="q">
+          Urgent Care
       </a>
-      <a href="/search?service=emergency" class="search-card">
-        <div class="card-text" style="font-size: 20px;">Emergency</div>
+
+      <a hx-get="/service_maternity" class="search-card" style="font-size: 20px;" hx-trigger="click" hx-target="#results" service="maternity">
+          Maternity Care
       </a>
-      <a href="/search?service=maternity" class="search-card">
-        <div class="card-text" style="font-size: 20px;">Maternity</div>
+
+      <a hx-get="/service_childrens" class="search-card" style="font-size: 20px;" hx-trigger="click" hx-target="#results" service="childrens">
+          Pediatric Care
       </a>
-      <a href="/search?service=general" class="search-card">
-        <div class="card-text" style="font-size: 20px;">General</div>
+
+      <a hx-get="/service_veterans" class="search-card" style="font-size: 20px;" hx-trigger="click" hx-target="#results" service="veterans">
+          Veterans Facilities
       </a>
+
+      <a hx-get="/service_psychiatric" class="search-card" style="font-size: 20px;" hx-trigger="click" hx-target="#results" service="psychiatric">
+          Psychiatric Facilities
+      </a>
+
+
+
     </div>
 
     <div id="results" class="results-grid" style="margin-top: 40px;"></div>
   </div>
+  
 {% endblock %}
+
+<!--
+<a href="/search?service=urgent_care" class="search-card">
+        <div class="card-text" style="font-size: 20px;">Urgent Care</div>
+</a>
+
+<a href="/search?service=maternity" class="search-card">
+  <div class="card-text" style="font-size: 20px;">Maternity Care</div>
+</a>
+
+<a href="/search?service=pediatric" class="search-card">
+  <div class="card-text" style="font-size: 20px;">Children, Pediatrics</div>
+</a>
+
+<a href="/search?service=veterans" class="search-card">
+  <div class="card-text" style="font-size: 20px;">Veterans Facilities</div>
+</a>
+
+<a href="/search?service=psychiatric" class="search-card">
+  <div class="card-text" style="font-size: 20px;">Psychiatric Facilities</div>
+</a>
+-->
