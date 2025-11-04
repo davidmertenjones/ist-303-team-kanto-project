@@ -8,6 +8,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError, Email
 from flask_bcrypt import Bcrypt
+from flask_user import roles_required
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -41,6 +42,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
+    role = db.Column(db.String(80), nullable=False)
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
@@ -73,7 +75,7 @@ class SignupForm(FlaskForm):
                            InputRequired(), Email()], render_kw={"placeholder": "Email"})
 
     password = PasswordField(validators=[
-                             InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
+                             InputRequired(), Length(min=5, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Signup')
 
@@ -89,7 +91,7 @@ class LoginForm(FlaskForm):
                            InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
 
     password = PasswordField(validators=[
-                             InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
+                             InputRequired(), Length(min=5, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
 
@@ -217,3 +219,6 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+@roles_required('admin')
+def admin_panel():
+    pass

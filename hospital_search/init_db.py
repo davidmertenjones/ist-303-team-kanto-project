@@ -2,17 +2,21 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin
 import csv
+from flask_bcrypt import Bcrypt
 #from app import User
 app = Flask(__name__)
 
 def init_db():
     with app.app_context():
         db.create_all()
-        load_data()
+        load_hospital_data()
+        load_user_data()
         print('data loaded')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'thisisasecretkey'
+
+bcrypt = Bcrypt(app)
 
 db = SQLAlchemy(app)
 
@@ -21,6 +25,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
+    role = db.Column(db.String(80), nullable=False)
 
 class Hospital(db.Model):
         
@@ -42,7 +47,7 @@ class Hospital(db.Model):
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
 
-def load_data():
+def load_hospital_data():
 
     hospital_data = []
 
@@ -76,4 +81,32 @@ def load_data():
 
     db.session.commit() 
 
+
+
+def load_user_data():
+
+    user_data = []
+
+    with open('user_accounts.csv', encoding='utf-8-sig') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            user_data.append(row)
+
+    for u in user_data:
+        user_id = int(u['user_id'])
+        hashed_password = bcrypt.generate_password_hash(u['password'])
+
+        user = User(
+            id = user_id,
+            username = u['username'],
+            email = u['email'],
+            password = hashed_password,
+            role = u['role']
+        )
+    
+        db.session.add(user)
+
+    db.session.commit()
+
 init_db()
+
