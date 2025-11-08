@@ -8,7 +8,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError, Email
 from flask_bcrypt import Bcrypt
-from flask_user import roles_required
 
 db = SQLAlchemy()
 app = Flask(__name__)
@@ -219,6 +218,5 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-@roles_required('admin')
 def admin_panel():
     pass
