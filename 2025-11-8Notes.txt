@@ -1,0 +1,35 @@
+Date and Attendees: 11/8; Aashish, Eva, David, Aishwarya, Jen
+
+
+General Updates
+
+Eva:
+- Re:geocoding, Geocoding is feasible and she's working through it
+- Focus on getting the features up, test later
+
+David: 
+-updated account database information to user_accounts.csv
+-login credentials to test are inside .csv
+- problems logging in across environments, unsure why
+	- may have to roll back bcrypt for testing's sake
+- need to set up pagination urls for admin and provider panels
+
+
+ABOUT RATINGS FEATURE
+Aashish:
+- include ratings into admin panel to delete
+David:
+- need to expand database for this feature, use unique primary key
+
+
+TRYING TO GET THE PROGRAM TO RUN
+- Windows environment works (we got there eventually)
+	- Flask-user module is an issue for windows, had to remove it
+	- venv/bin folder is for mac, venv/Scripts is for windows
+- need to update README instructions
+- need to figure out how to make testing actions on github
+
+
+TO DO: Everyone try to figure out github actions
+
+Misc note: Leetcode club?
