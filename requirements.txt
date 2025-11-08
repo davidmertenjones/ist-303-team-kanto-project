@@ -1,7 +1,6 @@
 flask
 flask-sqlalchemy
 flask-login
-flask-user
 flask-wtf
 flask-bcrypt
 wtforms
