@@ -12,6 +12,7 @@ jobs:
   build: 
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         python-version: [3.12, 3.13]
         os: [windows-latest, macos-latest]
@@ -45,3 +46,4 @@ jobs:
 
   #deploy:
     # deploy steps here
+
