@@ -219,6 +219,7 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
-
+@app.route('/admin')
+@roles_accepted('Admin')
 def admin_panel():
     pass
