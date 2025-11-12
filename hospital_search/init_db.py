@@ -20,16 +20,19 @@ bcrypt = Bcrypt(app)
 
 db = SQLAlchemy(app)
 
+#User database model
 class User(db.Model, UserMixin):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    role = db.Column(db.String(80), nullable=False)
+    role = db.Column(db.String(80), nullable=False, default='user')
 
+#Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
-        
-    fac_id = db.Column(db.String(100), primary_key=True)
+    __tablename__ = 'hospital'
+    id = db.Column(db.String(100), primary_key=True)
     fac_name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(500), nullable=False)
@@ -58,7 +61,7 @@ def load_hospital_data():
 
     for h in hospital_data:
         hospital = Hospital(
-            fac_id=h['fac_id'],
+            id=h['fac_id'],
             fac_name=h['fac_name'], 
             address=h['address'], 
             city=h['city'], 
@@ -93,11 +96,11 @@ def load_user_data():
             user_data.append(row)
 
     for u in user_data:
-        user_id = int(u['user_id'])
+        id = int(u['id'])
         hashed_password = bcrypt.generate_password_hash(u['password'])
 
         user = User(
-            id = user_id,
+            id = id,
             username = u['username'],
             email = u['email'],
             password = hashed_password,

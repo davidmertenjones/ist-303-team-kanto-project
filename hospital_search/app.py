@@ -29,8 +29,8 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 @login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+def load_user(id):
+    return User.query.get(int(id))
 
 #### DATABASES ####
 
@@ -38,16 +38,17 @@ def load_user(user_id):
 
 #User database model
 class User(db.Model, UserMixin):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    role = db.Column(db.String(80), nullable=False)
+    role = db.Column(db.String(80), nullable=False, default='user')
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
-        
-    fac_id = db.Column(db.String(100), primary_key=True)
+    __tablename__ = 'hospital'
+    id = db.Column(db.String(100), primary_key=True)
     fac_name = db.Column(db.String(100), nullable=False)
     address = db.Column(db.String(100), nullable=False)
     city = db.Column(db.String(500), nullable=False)
@@ -220,6 +221,7 @@ def logout():
     return redirect(url_for('home'))
 
 @app.route('/admin')
-@roles_accepted('Admin')
+@login_required
+@roles_accepted('admin')
 def admin_panel():
-    pass
+    return render_template('admin_panel.html')
