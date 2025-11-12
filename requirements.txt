@@ -3,10 +3,12 @@ flask-sqlalchemy
 flask-login
 flask-wtf
 flask-bcrypt
+flask-security
 wtforms
 email-validator
 bcrypt
 pytest
 pandas
 numpy
+
 matplotlib
