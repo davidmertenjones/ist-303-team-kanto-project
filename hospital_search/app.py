@@ -4,7 +4,6 @@ from flask import Flask, render_template, url_for, redirect, flash, request
 
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
-from flask_security import roles_accepted
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError, Email
@@ -222,6 +221,5 @@ def logout():
 
 @app.route('/admin')
 @login_required
-@roles_accepted('admin')
 def admin_panel():
     return render_template('admin_panel.html')
