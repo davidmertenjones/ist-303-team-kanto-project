@@ -20,9 +20,9 @@ bcrypt = Bcrypt(app)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-if 'SECURITY_PASSWORD_SALT' not in app.config:
+"""if 'SECURITY_PASSWORD_SALT' not in app.config:
     app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
-
+"""
 db = SQLAlchemy()
 
 db.init_app(app)
@@ -225,7 +225,6 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
-        print(user)
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
