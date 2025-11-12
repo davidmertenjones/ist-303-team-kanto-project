@@ -3,14 +3,15 @@
 from flask import Flask, render_template, url_for, redirect, flash, request
 
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
-from flask_security import roles_accepted
+#Removed UserMixin from flask_login imports
+from flask_login import login_user, LoginManager, login_required, logout_user, current_user
+from flask_security import Security, SQLAlchemySessionUserDatastore, roles_accepted, UserMixin, RoleMixin
+import uuid
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import InputRequired, Length, ValidationError, Email
 from flask_bcrypt import Bcrypt
 
-db = SQLAlchemy()
 app = Flask(__name__)
 
 #### PASSWORD ENCRYPTION ####
@@ -19,6 +20,10 @@ bcrypt = Bcrypt(app)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
+if 'SECURITY_PASSWORD_SALT' not in app.config:
+    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
+
+db = SQLAlchemy()
 
 db.init_app(app)
 
@@ -32,9 +37,16 @@ login_manager.login_view = 'login'
 def load_user(id):
     return User.query.get(int(id))
 
+#### ASSOCIATION TABLE ####
+
 #### DATABASES ####
 
 ######## RUN "init_db.py" FIRST TO SET UP DATABASES
+
+roles_users = db.Table('roles_users',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+)
 
 #User database model
 class User(db.Model, UserMixin):
@@ -43,7 +55,16 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    role = db.Column(db.String(80), nullable=False, default='user')
+    active = db.Column(db.Boolean(), default=True)
+    fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False, default=lambda: uuid.uuid4().hex)
+    roles = db.relationship('Role', secondary=roles_users, backref='roled')
+
+#Roles database model
+
+class Role(db.Model, RoleMixin):
+    __tablename__ = 'role'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
@@ -65,6 +86,9 @@ class Hospital(db.Model):
     psychiatric = db.Column(db.Integer, nullable=False)
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
+
+
+
 
 #### FORMS ####
 
@@ -95,6 +119,10 @@ class LoginForm(FlaskForm):
                              InputRequired(), Length(min=5, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
+
+user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
+security = Security(app, user_datastore)
+
 
 #### ROUTES ####
 #home - main "search by location" page
@@ -197,6 +225,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
+        print(user)
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)

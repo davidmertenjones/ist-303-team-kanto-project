@@ -1,8 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin
+#from flask_login import UserMixin
+from flask_security import RoleMixin, UserMixin
 import csv
 from flask_bcrypt import Bcrypt
+import uuid
 #from app import User
 app = Flask(__name__)
 
@@ -20,6 +22,27 @@ bcrypt = Bcrypt(app)
 
 db = SQLAlchemy(app)
 
+#from app import Role, db, app
+
+def create_roles():
+    with app.app_context():
+        admin = Role(id=1, name='Admin')
+        provider = Role(id=2, name='Provider')
+        user = Role(id=3, name='User')
+        
+        db.session.add(admin)
+        db.session.add(provider)
+        db.session.add(user)
+
+        db.session.commit()
+        print("Roles created successfully!")
+
+
+roles_users = db.Table('roles_users',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+)
+
 #User database model
 class User(db.Model, UserMixin):
     __tablename__ = 'user'
@@ -27,7 +50,14 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    role = db.Column(db.String(80), nullable=False, default='user')
+    active = db.Column(db.Boolean(), default=True)
+    fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False, default=lambda: uuid.uuid4().hex)
+    roles = db.relationship('Role', secondary=roles_users, backref='roled')
+
+class Role(db.Model, RoleMixin):
+    __tablename__ = 'role'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
@@ -85,6 +115,11 @@ def load_hospital_data():
     db.session.commit() 
 
 
+roles_dict = {
+    "Admin":1,
+    "Provider":2,
+    "User":3
+}
 
 def load_user_data():
 
@@ -104,7 +139,9 @@ def load_user_data():
             username = u['username'],
             email = u['email'],
             password = hashed_password,
-            role = u['role']
+            active = True,
+            fs_uniquifier = uuid.uuid4().hex,
+            roles = db.session.query(Role).filter_by(id=roles_dict[u['role']]).all()
         )
     
         db.session.add(user)
