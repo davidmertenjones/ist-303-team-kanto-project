@@ -14,9 +14,9 @@ def test_client():
     with app.test_client() as client:
         with app.app_context():
             db.create_all()
-            # Add test hospital data
+            # add test hospital data - updated
             test_hospital = Hospital(
-                fac_id='test_hosp_001',
+                id='test_hosp_001',  # CHANGED from fac_id to id
                 fac_name='Test Hospital',
                 address='123 Test St',
                 city='Los Angeles',
@@ -28,11 +28,11 @@ def test_client():
                 hosp_owner='Private',
                 emergency='Yes',
                 maternity='Yes',
-                rating=4,
-                urgent_care=1,  
-                psychiatric=0,   
-                childrens=0,     
-                veterans=0  
+                rating='4',
+                urgent_care=1,
+                psychiatric=0,
+                childrens=0,
+                veterans=0
             )
             db.session.add(test_hospital)
             db.session.commit()
@@ -53,7 +53,8 @@ def new_user():
     user = User(
         username='testuser',
         email='test@example.com',
-        password=bcrypt.generate_password_hash('testpassword123').decode('utf-8')
+        password=bcrypt.generate_password_hash('testpassword123').decode('utf-8'),
+        role='user' 
     )
     return user
 

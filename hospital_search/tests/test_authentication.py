@@ -73,3 +73,17 @@ class TestAuthentication:
         # The form should be re-displayed (not redirect) when validation fails
         assert response.status_code == 200
         assert b'duplicateuser' in response.data  
+       
+    def test_user_role_assignment(self, test_client):
+        """Test new users get default 'user' role"""
+        with test_client.application.app_context():
+            user = User(
+                username='roletest',
+                email='role@example.com',
+                password=bcrypt.generate_password_hash('password123').decode('utf-8')
+            )
+            db.session.add(user)
+            db.session.commit()
+            
+            saved_user = User.query.filter_by(username='roletest').first()
+            assert saved_user.role == 'user' # default role

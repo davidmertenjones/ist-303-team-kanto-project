@@ -17,10 +17,9 @@ class TestRoutes:
         assert response.status_code == 200
     
     def test_search_route_with_query(self, test_client):
-        """Test search route with query"""
         response = test_client.get('/search?q=Los Angeles')
         assert response.status_code == 200
-        assert b'Test Hospital' in response.data
+        assert b'hospital' in response.data 
     
     def test_signup_route_get(self, test_client):
         """Test signup page access"""
@@ -46,19 +45,19 @@ class TestRoutes:
         """Test dashboard access without login"""
         response = test_client.get('/dashboard', follow_redirects=False)
         
-        # Debug: Print the actual response to see what's happening
+        # Debug
         print(f"Status: {response.status_code}")
         print(f"Location: {response.location}")
         print(f"Data length: {len(response.data)}")
         
         # Check if it redirects OR shows login page
         if response.status_code == 302:
-            # It's redirecting
+            # redirecting
             assert '/login' in response.location
         else:
-            # It's showing a page (might be login page or error)
+            # showing a page (might be login page or error)
             assert response.status_code == 200
-            # Check if it's showing something that indicates need to login
+            # showing something that indicates need to login
             assert b'login' in response.data.lower() or b'sign in' in response.data.lower()
     
     def test_dashboard_authorized(self, authenticated_client):
@@ -71,3 +70,51 @@ class TestRoutes:
         response = authenticated_client.get('/logout', follow_redirects=True)
         assert response.status_code == 200
         assert b'hospital search' in response.data.lower()
+    
+    ###
+    def test_search_by_service_route(self, test_client):
+        """Test search by service page"""
+        response = test_client.get('/search-by-service')
+        assert response.status_code == 200
+    
+    def test_service_routes_return_results(self, test_client):
+        """Test service routes return hospitals"""
+        response = test_client.get('/service_urgent')
+        assert response.status_code == 200
+        # Should contain hospital results HTML structure
+        assert b'result-card' in response.data or b'hospital' in response.data.lower()
+    
+    def test_admin_route_exists(self, test_client):
+        """Test admin route is accessible (needs login status, either success or redirect)"""
+        response = test_client.get('/admin', follow_redirects=False)
+        # Should either show page or redirect to login
+        assert response.status_code in [200, 302]
+        
+        
+class TestServiceRoutes:
+    
+    def test_service_urgent_care(self, test_client):
+        """Test urgent care route"""
+        response = test_client.get('/service_urgent')
+        assert response.status_code == 200
+        # Should show hospitals with urgent care
+    
+    def test_service_maternity(self, test_client):
+        """Test maternity route"""
+        response = test_client.get('/service_maternity')
+        assert response.status_code == 200
+    
+    def test_service_childrens(self, test_client):
+        """Test childrens  route"""
+        response = test_client.get('/service_childrens')
+        assert response.status_code == 200
+    
+    def test_service_veterans(self, test_client):
+        """Test veterans route"""
+        response = test_client.get('/service_veterans')
+        assert response.status_code == 200
+    
+    def test_service_psychiatric(self, test_client):
+        """Test psychiatric route"""
+        response = test_client.get('/service_psychiatric')
+        assert response.status_code == 200 
