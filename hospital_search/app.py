@@ -1,11 +1,11 @@
 
 
-from flask import Flask, render_template, url_for, redirect, flash, request
+from flask import Flask, render_template, url_for, redirect, flash, request, Blueprint
 
 from flask_sqlalchemy import SQLAlchemy
 #Removed UserMixin from flask_login imports
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
-from flask_security import Security, SQLAlchemySessionUserDatastore, roles_accepted, UserMixin, RoleMixin
+from flask_security import Security, SQLAlchemySessionUserDatastore, SQLAlchemyUserDatastore, roles_accepted, UserMixin, RoleMixin
 import uuid
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
@@ -21,6 +21,8 @@ app.config['SECRET_KEY'] = 'thisisasecretkey'
 if 'SECURITY_PASSWORD_SALT' not in app.config:
     app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
 
+kanto_blueprint = Blueprint('blueprint', __name__)
+
 db = SQLAlchemy()
 
 db.init_app(app)
@@ -34,6 +36,26 @@ login_manager.login_view = 'login'
 @login_manager.user_loader
 def load_user(id):
     return User.query.get(int(id))
+
+#login - query users table for existing user, match password
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error=None
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if user.password == form.password.data:
+                login_user(user)
+                return redirect(url_for('dashboard'))
+            else:
+                error = 'Incorrect Password'  
+        else:
+            error = 'Invalid User'
+    return render_template('login.html', form=form, error=error)
+
+app.register_blueprint(kanto_blueprint)
+
 
 #### ASSOCIATION TABLE ####
 
@@ -116,7 +138,7 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Login')
 
-user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
+user_datastore = SQLAlchemyUserDatastore(db.session, User, Role)
 security = Security(app, user_datastore)
 
 
@@ -208,28 +230,13 @@ def signup():
     if form.validate_on_submit():
         hashed_password = form.password.data
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        form.validate_username(form.username)
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
 
     return render_template('signup.html', form=form)
 
-#login - query users table for existing user, match password
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error=None
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if user.password == form.password.data:
-                login_user(user)
-                return redirect(url_for('dashboard'))
-            else:
-                error = 'Incorrect Password'  
-        else:
-            error = 'Invalid User'
-    return render_template('login_.html', form=form, error=error)
 
 #dashboard - not accessible unless logged-in [this page intentionally left blank]
 @app.route('/dashboard', methods=['GET', 'POST'])
