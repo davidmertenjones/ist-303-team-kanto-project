@@ -5,8 +5,8 @@ from flask import Flask, render_template, url_for, redirect, flash, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, EmailField
-from wtforms.validators import InputRequired, Length, ValidationError, Email
+from wtforms import StringField, PasswordField, SubmitField, EmailField, TextAreaField, IntegerField
+from wtforms.validators import InputRequired, Length, ValidationError, Email, NumberRange
 from flask_bcrypt import Bcrypt
 
 db = SQLAlchemy()
@@ -43,6 +43,10 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
     role = db.Column(db.String(80), nullable=False, default='user')
+    
+    @property
+    def is_admin(self):
+        return self.role == 'admin'
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
@@ -64,6 +68,16 @@ class Hospital(db.Model):
     psychiatric = db.Column(db.Integer, nullable=False)
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
+
+#Review database model - stores user reviews for hospitals
+class Review(db.Model):
+    __tablename__ = 'review'
+    id = db.Column(db.Integer, primary_key=True)
+    hospital_name = db.Column(db.String(100), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    comment = db.Column(db.String(500), nullable=False)
+    created_at = db.Column(db.String(50), nullable=False)
 
 #### FORMS ####
 
@@ -94,6 +108,16 @@ class LoginForm(FlaskForm):
                              InputRequired(), Length(min=5, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
+
+class ReviewForm(FlaskForm):
+    hospital_name = StringField(validators=[
+                           InputRequired(), Length(min=2, max=100)], render_kw={"placeholder": "Hospital Name"})
+    
+    rating = IntegerField(validators=[
+                           InputRequired(), NumberRange(min=1, max=5)], render_kw={"placeholder": "Rating (1-5)"})
+    
+    comment = TextAreaField(validators=[
+                           InputRequired(), Length(min=10, max=500)], render_kw={"placeholder": "Share your experience..."})
 
 #### ROUTES ####
 #home - main "search by location" page
@@ -223,3 +247,28 @@ def logout():
 @login_required
 def admin_panel():
     return render_template('admin_panel.html')
+
+#review - allows logged-in users to submit reviews
+@app.route('/review', methods=['GET', 'POST'])
+@login_required
+def review():
+    form = ReviewForm()
+    
+    if form.validate_on_submit():
+        from datetime import datetime
+        new_review = Review(
+            hospital_name=form.hospital_name.data,
+            user_id=current_user.id,
+            rating=form.rating.data,
+            comment=form.comment.data,
+            created_at=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        )
+        db.session.add(new_review)
+        db.session.commit()
+        flash('Thank you for your review!', 'success')
+        return redirect(url_for('review'))
+    
+    # Get recent reviews from this user
+    user_reviews = Review.query.filter_by(user_id=current_user.id).order_by(Review.created_at.desc()).limit(5).all()
+    
+    return render_template('review.html', form=form, user_reviews=user_reviews)

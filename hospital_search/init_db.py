@@ -50,6 +50,16 @@ class Hospital(db.Model):
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
 
+#Review database model - stores user reviews for hospitals
+class Review(db.Model):
+    __tablename__ = 'review'
+    id = db.Column(db.Integer, primary_key=True)
+    hospital_name = db.Column(db.String(100), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    comment = db.Column(db.String(500), nullable=False)
+    created_at = db.Column(db.String(50), nullable=False)
+
 def load_hospital_data():
 
     hospital_data = []

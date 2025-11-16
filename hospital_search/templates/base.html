@@ -27,11 +27,14 @@
             <a href="{{ url_for('signup') }}">Sign Up</a>
           </div>
           {% else %}
-          {% if current_user.is_admin %}
+          <!-- Admin/Review button - shows based on user role -->
           <div class="level-item">
-            <a href="{{ url_for('admin_panel') }}">Admin Panel</a>
+            {% if current_user.is_admin %}
+              <a href="{{ url_for('admin_panel') }}" class="admin-review-btn">Admin Panel</a>
+            {% else %}
+              <a href="{{ url_for('review') }}" class="admin-review-btn">Leave Review</a>
+            {% endif %}
           </div>
-          {% endif %}
           <div class="level-item">
             <a href="{{ url_for('home') }}">Home</a>
           </div>
