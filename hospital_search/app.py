@@ -16,13 +16,11 @@ app = Flask(__name__)
 
 #### PASSWORD ENCRYPTION ####
 
-bcrypt = Bcrypt(app)
-
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-"""if 'SECURITY_PASSWORD_SALT' not in app.config:
+if 'SECURITY_PASSWORD_SALT' not in app.config:
     app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
-"""
+
 db = SQLAlchemy()
 
 db.init_app(app)
@@ -86,8 +84,6 @@ class Hospital(db.Model):
     psychiatric = db.Column(db.Integer, nullable=False)
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
-
-
 
 
 #### FORMS ####
@@ -210,7 +206,7 @@ def signup():
     form = SignupForm()
 
     if form.validate_on_submit():
-        hashed_password = bcrypt.generate_password_hash(form.password.data)
+        hashed_password = form.password.data
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
@@ -226,14 +222,14 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
-            if bcrypt.check_password_hash(user.password, form.password.data):
+            if user.password == form.password.data:
                 login_user(user)
                 return redirect(url_for('dashboard'))
             else:
                 error = 'Incorrect Password'  
         else:
             error = 'Invalid User'
-    return render_template('login.html', form=form, error=error)
+    return render_template('login_.html', form=form, error=error)
 
 #dashboard - not accessible unless logged-in [this page intentionally left blank]
 @app.route('/dashboard', methods=['GET', 'POST'])

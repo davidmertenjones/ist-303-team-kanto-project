@@ -17,10 +17,8 @@ def init_db():
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-"""if 'SECURITY_PASSWORD_SALT' not in app.config:
-    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']"""
-
-bcrypt = Bcrypt(app)
+if 'SECURITY_PASSWORD_SALT' not in app.config:
+    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
 
 db = SQLAlchemy(app)
 
@@ -134,7 +132,7 @@ def load_user_data():
 
     for u in user_data:
         id = int(u['id'])
-        hashed_password = bcrypt.generate_password_hash(u['password'])
+        hashed_password = u['password']
 
         user = User(
             id = id,
