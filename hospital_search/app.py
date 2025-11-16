@@ -1,11 +1,11 @@
 
 
-from flask import Flask, render_template, url_for, redirect, flash, request, Blueprint
+from flask import Flask, render_template, url_for, redirect, flash, request, Blueprint, render_template_string
 
 from flask_sqlalchemy import SQLAlchemy
 #Removed UserMixin from flask_login imports
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
-from flask_security import Security, SQLAlchemySessionUserDatastore, SQLAlchemyUserDatastore, roles_accepted, UserMixin, RoleMixin
+from flask_security import Security, SQLAlchemySessionUserDatastore, roles_accepted, UserMixin, RoleMixin, hash_password, roles_required
 import uuid
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
@@ -18,6 +18,7 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
+app.config['SECURITY_PASSWORD_SALT'] = 'plaintext'
 if 'SECURITY_PASSWORD_SALT' not in app.config:
     app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
 
@@ -63,7 +64,7 @@ app.register_blueprint(kanto_blueprint)
 
 ######## RUN "init_db.py" FIRST TO SET UP DATABASES
 
-roles_users = db.Table('roles_users',
+user_roles = db.Table('user_roles',
     db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
     db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
 )
@@ -77,7 +78,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(80), nullable=False)
     active = db.Column(db.Boolean(), default=True)
     fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False, default=lambda: uuid.uuid4().hex)
-    roles = db.relationship('Role', secondary=roles_users, backref='roled')
+    roles = db.relationship('Role', secondary=user_roles, backref='roled')
 
 #Roles database model
 
@@ -138,7 +139,7 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Login')
 
-user_datastore = SQLAlchemyUserDatastore(db.session, User, Role)
+user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
 security = Security(app, user_datastore)
 
 
@@ -252,7 +253,12 @@ def logout():
     return redirect(url_for('home'))
 
 @app.route('/admin')
-@login_required
-@roles_accepted('admin')
+@roles_required('Admin')
 def admin_panel():
     return render_template('admin_panel.html')
+
+@app.route('/userdbcheck')
+def user_db_check():
+    results = User.query.filter(User.email.icontains('@')).all()
+
+    return render_template("user_db_check.html", results=results)

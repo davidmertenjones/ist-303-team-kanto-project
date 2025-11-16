@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 #from flask_login import UserMixin
-from flask_security import RoleMixin, UserMixin
+from flask_security import Security, RoleMixin, UserMixin, hash_password, SQLAlchemySessionUserDatastore
 import csv
 from flask_bcrypt import Bcrypt
 import uuid
@@ -17,10 +17,14 @@ def init_db():
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'thisisasecretkey'
+app.config['SECURITY_PASSWORD_HASH'] = 'plaintext'
+app.config['SECURITY_PASSWORD_SINGLE_HASH'] = 'plaintext'
 if 'SECURITY_PASSWORD_SALT' not in app.config:
     app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
 
 db = SQLAlchemy(app)
+
+
 
 #from app import Role, db, app
 
@@ -38,7 +42,7 @@ def create_roles():
         print("Roles created successfully!")
 
 
-roles_users = db.Table('roles_users',
+user_roles = db.Table('user_roles',
     db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
     db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
 )
@@ -52,7 +56,7 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(80), nullable=False)
     active = db.Column(db.Boolean(), default=True)
     fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False, default=lambda: uuid.uuid4().hex)
-    roles = db.relationship('Role', secondary=roles_users, backref='roled')
+    roles = db.relationship('Role', secondary=user_roles, backref='roled')
 
 class Role(db.Model, RoleMixin):
     __tablename__ = 'role'
@@ -114,6 +118,9 @@ def load_hospital_data():
 
     db.session.commit() 
 
+user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
+security = Security(app, user_datastore)
+
 
 roles_dict = {
     "Admin":1,
@@ -132,7 +139,7 @@ def load_user_data():
 
     for u in user_data:
         id = int(u['id'])
-        hashed_password = u['password']
+        hashed_password = hash_password(u['password'])
 
         user = User(
             id = id,

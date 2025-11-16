@@ -1,0 +1,16 @@
+{% for result in results %}
+<div class="result-card">
+  <div class="result-image"></div>
+  <div>
+    <h3>{{ result.username }}</h3>
+    <p>{{ result.email }}<br/>{{ result.role }}, {{ result.password }}, {{result.active}}</p>
+    <p>{{ result.id }}</p>
+    <a href="#" 
+       class="auth-link" 
+       style="width: 75px; text-align: center; margin-top: 8px;"
+       hx-get="/hospital/{{ result.fac_id }}" 
+       hx-target="body" 
+       hx-swap="beforeend">Details</a>
+  </div>
+</div>
+{% endfor %}
