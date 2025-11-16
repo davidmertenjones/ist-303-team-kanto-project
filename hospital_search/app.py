@@ -272,3 +272,7 @@ def review():
     user_reviews = Review.query.filter_by(user_id=current_user.id).order_by(Review.created_at.desc()).limit(5).all()
     
     return render_template('review.html', form=form, user_reviews=user_reviews)
+
+#### RUN THE APP ####
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
