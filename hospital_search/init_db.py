@@ -11,6 +11,7 @@ app = Flask(__name__)
 def init_db():
     with app.app_context():
         db.create_all()
+        create_roles()
         load_hospital_data()
         load_user_data()
         print('data loaded')
@@ -122,13 +123,16 @@ user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
 security = Security(app, user_datastore)
 
 
-roles_dict = {
-    "Admin":1,
-    "Provider":2,
-    "User":3
-}
+
 
 def load_user_data():
+
+    roles_dict = {
+        "Admin":Role.query.filter(Role.id == 1).limit(1).all(),
+        "Provider":Role.query.filter(Role.id == 2).limit(1).all(),
+        "User":Role.query.filter(Role.id == 3).limit(1).all()
+    }
+    print(roles_dict)
 
     user_data = []
 
@@ -148,7 +152,7 @@ def load_user_data():
             password = hashed_password,
             active = True,
             fs_uniquifier = uuid.uuid4().hex,
-            roles = db.session.query(Role).filter_by(id=roles_dict[u['role']]).all()
+            roles = Role.query.filter(Role.id == u['role']).limit(1).all()
         )
     
         db.session.add(user)
