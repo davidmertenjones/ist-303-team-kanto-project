@@ -255,10 +255,15 @@ def logout():
 @app.route('/admin')
 @roles_required('Admin')
 def admin_panel():
-    return render_template('admin_panel_dummy.html')
+    return render_template('admin_panel.html')
 
 @app.route('/userdbcheck')
 def user_db_check():
     results = User.query.filter(User.email.icontains('@')).all()
 
     return render_template("user_db_check.html", results=results)
+
+@app.route('/admin_add_service')
+@roles_required('Admin')
+def admin_add_service():
+    pass
