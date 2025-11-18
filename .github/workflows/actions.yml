@@ -33,20 +33,17 @@ jobs:
         run: |  # indicates terminal commands
           python -m pip install --upgrade pip
           pip install -r requirements.txt 
+          pip install pytest
 
       - name: test using pytest 
         run: | 
           pip install pytest pytest-cov
-          cd hospital_search/tests
-          pytest conftest.py -v
-          pytest test_authentication.py -v
-          pytest test_forms.py -v
-          pytest test_models.py -v
-          pytest test_routes.py -v
-          pytest test_admin.py -v
+          cd hospital_search
+          python -m pytest tests/ -v
 
   #deploy:
     # deploy steps here
+
 
 
 
