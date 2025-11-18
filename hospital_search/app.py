@@ -1,9 +1,8 @@
-
-
 from flask import Flask, render_template, url_for, redirect, flash, request
-
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
+from flask_login import login_user, LoginManager, login_required, logout_user, current_user
+from flask_security import Security, SQLAlchemySessionUserDatastore, UserMixin, RoleMixin, roles_required, roles_accepted
+import uuid
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField, TextAreaField, IntegerField
 from wtforms.validators import InputRequired, Length, ValidationError, Email, NumberRange
@@ -31,9 +30,33 @@ login_manager.login_view = 'login'
 def load_user(id):
     return User.query.get(int(id))
 
+#login - query users table for existing user, match password
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error=None
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if bcrypt.check_password_hash(user.password, form.password.data):
+                login_user(user)
+                return redirect(url_for('dashboard'))
+            else:
+                error = 'Incorrect Password'  
+        else:
+            error = 'Invalid User'
+    return render_template('login.html', form=form, error=error)
+
 #### DATABASES ####
 
 ######## RUN "init_db.py" FIRST TO SET UP DATABASES
+
+#### ASSOCIATION TABLE ####
+
+user_roles = db.Table('user_roles',
+    db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+    db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
+)
 
 #User database model
 class User(db.Model, UserMixin):
@@ -42,11 +65,24 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(80), nullable=False)
     password = db.Column(db.String(80), nullable=False)
-    role = db.Column(db.String(80), nullable=False, default='user')
+    active = db.Column(db.Boolean(), default=True)
+    fs_uniquifier = db.Column(db.String(255), unique=True, nullable=False, default=lambda: uuid.uuid4().hex)
+    roles = db.relationship('Role', secondary=user_roles, backref='roled')
     
+    #Add methods to check user type (in order to display different buttons on home page)
     @property
     def is_admin(self):
-        return self.role == 'admin'
+        return self.roles == Role.query.filter(Role.id == 1).limit(1).all()
+    
+    @property
+    def is_provider(self):
+        return self.roles == Role.query.filter(Role.id == 2).limit(1).all()
+    
+#Roles database model
+class Role(db.Model, RoleMixin):
+    __tablename__ = 'role'
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
 
 #Hospital database model (pre-loads from LACOUNTY.csv)
 class Hospital(db.Model):
@@ -119,6 +155,12 @@ class ReviewForm(FlaskForm):
     comment = TextAreaField(validators=[
                            InputRequired(), Length(min=10, max=500)], render_kw={"placeholder": "Share your experience..."})
 
+#### User Datastore & Security ####
+
+user_datastore = SQLAlchemySessionUserDatastore(db.session, User, Role)
+security = Security(app, user_datastore)
+
+
 #### ROUTES ####
 #home - main "search by location" page
 #search - loads search results dynamically within home
@@ -176,11 +218,6 @@ def service_psychiatric():
     results = Hospital.query.filter(Hospital.urgent_care.icontains(1)).limit(100).all()
     return render_template("search_results.html", results=results)
 
-
-
-
-
-
 #search_by_location - alias to search_by_name
 @app.route("/search-by-location")
 def search_by_location():
@@ -207,28 +244,14 @@ def signup():
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data)
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        form.validate_username(form.username)
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
 
     return render_template('signup.html', form=form)
 
-#login - query users table for existing user, match password
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error=None
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
-        if user:
-            if bcrypt.check_password_hash(user.password, form.password.data):
-                login_user(user)
-                return redirect(url_for('dashboard'))
-            else:
-                error = 'Incorrect Password'  
-        else:
-            error = 'Invalid User'
-    return render_template('login.html', form=form, error=error)
+
 
 #dashboard - not accessible unless logged-in [this page intentionally left blank]
 @app.route('/dashboard', methods=['GET', 'POST'])
@@ -243,14 +266,17 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+#roles_required prevents non-Admins from accessing admin page
 @app.route('/admin')
-@login_required
+@roles_required('Admin')
 def admin_panel():
     return render_template('admin_panel.html')
 
-#review - allows logged-in users to submit reviews
+#review - allows logged-in Users and Admins to submit reviews
+#roles_accepted prevents Providers from rating their own facilities
 @app.route('/review', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('User', 'Admin')
 def review():
     form = ReviewForm()
     
@@ -273,6 +299,20 @@ def review():
     
     return render_template('review.html', form=form, user_reviews=user_reviews)
 
+
+################################################################################
+#### DEVELOPMENT ONLY - THIS DISPLAYS USERS WITH ROLES AND PASSWORDS ####
+@app.route('/userdbcheck')
+def user_db_check():
+    results = User.query.filter(User.email.icontains('@')).all()
+
+    return render_template("user_db_check.html", results=results)
+################################################################################
+
+
+
+################################################################################
 #### RUN THE APP ####
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+################################################################################
