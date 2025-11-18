@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Manage Reviews{% endblock %}
+
+{% block content %}
+  <div class="catalog-shell">
+    <h1 class="catalog-title">Leave a Review</h1>
+    <p>View and edit your reviews of hospitals and healthcare facilities.</p>
+
+    <!-- Flash messages for feedback -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Previous Reviews Section -->
+    <!-- {% if user_reviews %} -->
+    <div class="previous-reviews">
+      <h2>Your Facility Reviews</h2>
+      {% for review in user_reviews %}
+      <div class="review-card">
+        <div class="review-header">
+          <strong>{{ review.hospital_name }}</strong>
+          <span class="review-rating">{{ '⭐' * review.rating }}</span>
+        </div>
+        <p class="review-comment">{{ review.comment }}</p>
+        <small class="review-date">{{ review.created_at }}</small>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+{% endblock %}
