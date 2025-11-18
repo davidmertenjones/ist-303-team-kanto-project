@@ -18,10 +18,6 @@ def init_db():
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-app.config['SECURITY_PASSWORD_HASH'] = 'plaintext'
-app.config['SECURITY_PASSWORD_SINGLE_HASH'] = 'plaintext'
-if 'SECURITY_PASSWORD_SALT' not in app.config:
-    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
 
 db = SQLAlchemy(app)
 
