@@ -25,7 +25,7 @@ if 'SECURITY_PASSWORD_SALT' not in app.config:
 
 db = SQLAlchemy(app)
 
-
+bcrypt = Bcrypt(app)
 
 #from app import Role, db, app
 
@@ -143,7 +143,7 @@ def load_user_data():
 
     for u in user_data:
         id = int(u['id'])
-        hashed_password = hash_password(u['password'])
+        hashed_password = bcrypt.generate_password_hash(u['password'])
 
         user = User(
             id = id,

@@ -18,15 +18,17 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-app.config['SECURITY_PASSWORD_SALT'] = 'plaintext'
-if 'SECURITY_PASSWORD_SALT' not in app.config:
-    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']
+#app.config['SECURITY_PASSWORD_SALT'] = 'plaintext2'
+"""if 'SECURITY_PASSWORD_SALT' not in app.config:
+    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']"""
 
 kanto_blueprint = Blueprint('blueprint', __name__)
 
 db = SQLAlchemy()
 
 db.init_app(app)
+
+bcrypt = Bcrypt(app)
 
 #### LOGIN MANAGER ####
 
@@ -46,7 +48,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
-            if user.password == form.password.data:
+            if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
                 return redirect(url_for('dashboard'))
             else:
@@ -229,7 +231,7 @@ def signup():
     form = SignupForm()
 
     if form.validate_on_submit():
-        hashed_password = form.password.data
+        hashed_password = bcrypt.generate_password_hash(form.password.data)
         new_user = User(username=form.username.data, email=form.email.data, password=hashed_password)
         form.validate_username(form.username)
         db.session.add(new_user)
@@ -255,7 +257,7 @@ def logout():
 @app.route('/admin')
 @roles_required('Admin')
 def admin_panel():
-    return render_template('admin_panel.html')
+    return render_template('admin_panel_dummy.html')
 
 @app.route('/userdbcheck')
 def user_db_check():
