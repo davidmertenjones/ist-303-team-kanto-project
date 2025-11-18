@@ -255,7 +255,7 @@ def logout():
 @app.route('/admin')
 @roles_required('Admin')
 def admin_panel():
-    return render_template('admin_panel.html')
+    return render_template('admin_panel_dummy.html')
 
 @app.route('/userdbcheck')
 def user_db_check():

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Admin Panel{% endblock %}
+
+{% block content %}
+  <div class="catalog-shell">
+    <div class="catalog-header">
+      <div class="catalog-title">HEALTH SERVICE CATALOG NAME</div>
+
+      <div class="auth-section">
+        {% if current_user.is_authenticated %}
+          <div class="user-welcome">Welcome, {{ current_user.username }}!</div>
+          <a href="{{ url_for('home') }}" class="auth-link">Back to Home</a>
+          <a href="{{ url_for('logout') }}" class="auth-link">Log out</a>
+        {% endif %}
+      </div>
+    </div>
+
+{% endblock %}
