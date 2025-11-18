@@ -1,11 +1,11 @@
 
 
-from flask import Flask, render_template, url_for, redirect, flash, request, Blueprint, render_template_string
+from flask import Flask, render_template, url_for, redirect, flash, request
 
 from flask_sqlalchemy import SQLAlchemy
 #Removed UserMixin from flask_login imports
 from flask_login import login_user, LoginManager, login_required, logout_user, current_user
-from flask_security import Security, SQLAlchemySessionUserDatastore, roles_accepted, UserMixin, RoleMixin, hash_password, roles_required
+from flask_security import Security, SQLAlchemySessionUserDatastore, UserMixin, RoleMixin, roles_required
 import uuid
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, EmailField
@@ -18,11 +18,6 @@ app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 app.config['SECRET_KEY'] = 'thisisasecretkey'
-#app.config['SECURITY_PASSWORD_SALT'] = 'plaintext2'
-"""if 'SECURITY_PASSWORD_SALT' not in app.config:
-    app.config['SECURITY_PASSWORD_SALT'] = app.config['SECRET_KEY']"""
-
-kanto_blueprint = Blueprint('blueprint', __name__)
 
 db = SQLAlchemy()
 
@@ -56,9 +51,6 @@ def login():
         else:
             error = 'Invalid User'
     return render_template('login.html', form=form, error=error)
-
-app.register_blueprint(kanto_blueprint)
-
 
 #### ASSOCIATION TABLE ####
 
