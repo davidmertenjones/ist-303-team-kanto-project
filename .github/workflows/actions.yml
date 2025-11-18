@@ -38,14 +38,16 @@ jobs:
         run: | 
           pip install pytest pytest-cov
           cd hospital_search/tests
-        # pytest conftest.py -v
-        # pytest test_authentication.py -v
-        # pytest test_forms.py -v
-        # pytest test_models.py -v
-        # pytest test_routes.py -v
+          pytest conftest.py -v
+          pytest test_authentication.py -v
+          pytest test_forms.py -v
+          pytest test_models.py -v
+          pytest test_routes.py -v
+          pytest test_admin.py -v
 
   #deploy:
     # deploy steps here
+
 
 
 
