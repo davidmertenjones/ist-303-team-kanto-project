@@ -64,6 +64,10 @@ class User(db.Model, UserMixin):
     @property
     def is_provider(self):
         return self.roles == Role.query.filter(Role.id == 2).limit(1).all()
+    
+    @property
+    def is_user(self):
+        return self.roles == Role.query.filter(Role.id == 3).limit(1).all()
 
 class Role(db.Model, RoleMixin):
     __tablename__ = 'role'

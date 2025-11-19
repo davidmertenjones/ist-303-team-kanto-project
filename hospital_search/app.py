@@ -40,7 +40,10 @@ def login():
         if user:
             if bcrypt.check_password_hash(user.password, form.password.data):
                 login_user(user)
-                return redirect(url_for('dashboard'))
+                if user.is_user == False:
+                    return redirect(url_for('dashboard'))
+                else:
+                    return redirect(url_for('home'))
             else:
                 error = 'Incorrect Password'  
         else:
@@ -77,6 +80,10 @@ class User(db.Model, UserMixin):
     @property
     def is_provider(self):
         return self.roles == Role.query.filter(Role.id == 2).limit(1).all()
+    
+    @property
+    def is_user(self):
+        return self.roles == Role.query.filter(Role.id == 3).limit(1).all()
     
 #Roles database model
 class Role(db.Model, RoleMixin):
