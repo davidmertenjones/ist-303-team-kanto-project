@@ -353,7 +353,9 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 | 5   | As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users. | Perform manual UI testing to ensure: <ul><li>The application provides an option for users to browse hospitals by medical specialty.</li><li>The results page displays a list of hospital facilities that match the selected medical specialty.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
 | 6   | As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement. | <ul><li>Each hospital facility listed includes details such as name, address, phone number, available services.</li><li>If no results are found, a clear message such as “No matching services found” is displayed.</li></ul> |
 
-#### Enable GitHub Actions to run pytest on pull and push requests  -- David (Please reference the workflow .yml file
+#### Enable GitHub Actions to run pytest on pull and push requests -- David
+To trigger on push and pull_request events and run pytest, create a workflow file named actions.yml in .github/workflows/:
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/.github/workflows/actions.yml
 
 ### <ins>Project Management Details</ins>
 **Readme:**
