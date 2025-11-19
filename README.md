@@ -337,7 +337,7 @@ As a patient, I want to view detailed provider information including name, addre
 ### <ins>Milestone 2.0 Presentation</ins>
 
 ### <ins>Milestone 2.0 Working Code</ins>
-Refer to #Steps-to-run-and-test-the-application section of the readme to run and test the application.
+Refer to #steps-to-run-and-test-the-application section of the readme to run and test the application.
 
 ### <ins>Milestone 2.0 User Stories</ins>
 4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
