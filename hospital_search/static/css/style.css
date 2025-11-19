@@ -58,6 +58,34 @@ body {
   background: #0056b3 !important;
 }
 
+/* Danger button for delete actions */
+.btn-danger {
+  padding: 8px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+/* Form textarea */
+.form-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-inter);
+  font-size: 14px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Main container */
 .catalog-shell {
   background: var(--bg);

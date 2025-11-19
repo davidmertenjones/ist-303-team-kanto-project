@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Manage Services{% endblock %}
+
+{% block content %}
+<div class="catalog-shell">
+    <h1 class="catalog-title">Manage Hospital Services</h1>
+    <p>Add, update, or remove services for hospitals</p>
+    
+    {% if hospitals %}
+        {% for hospital in hospitals %}
+        <div style="margin: 30px 0; padding: 20px; border: 1px solid #dee2e6; border-radius: 8px;">
+            <h2 style="color: #007bff; margin-top: 0;">{{ hospital.fac_name }}</h2>
+            <p style="color: #6c757d;">{{ hospital.city }}, {{ hospital.state }}</p>
+            
+            <!-- Add Service Button -->
+            <div style="margin: 15px 0;">
+                <a href="{{ url_for('add_service', hospital_id=hospital.id) }}" class="btn-primary">
+                    + Add Service
+                </a>
+            </div>
+            
+            <!-- Services Table -->
+            {% set services = hospital_services[hospital.id] %}
+            {% if services %}
+                <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+                    <thead>
+                        <tr style="background: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+                            <th style="padding: 12px; text-align: left;">Service Name</th>
+                            <th style="padding: 12px; text-align: left;">Description</th>
+                            <th style="padding: 12px; text-align: center;">Status</th>
+                            <th style="padding: 12px; text-align: center;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for service in services %}
+                        <tr style="border-bottom: 1px solid #dee2e6;">
+                            <td style="padding: 12px;">{{ service.service_name }}</td>
+                            <td style="padding: 12px;">{{ service.description[:50] if service.description else '' }}...</td>
+                            <td style="padding: 12px; text-align: center;">
+                                {% if service.is_active %}
+                                    <span style="color: green; font-weight: bold;">✓ Active</span>
+                                {% else %}
+                                    <span style="color: red;">✗ Inactive</span>
+                                {% endif %}
+                            </td>
+                            <td style="padding: 12px; text-align: center;">
+                                <a href="{{ url_for('edit_service', service_id=service.id) }}" 
+                                   class="btn-primary" style="font-size: 12px; padding: 5px 10px;">Edit</a>
+                                
+                                {% if service.is_active %}
+                                <form method="POST" action="{{ url_for('delete_service', service_id=service.id) }}" 
+                                      style="display: inline;">
+                                    <button type="submit" class="btn-danger" 
+                                            style="font-size: 12px; padding: 5px 10px;"
+                                            onclick="return confirm('Deactivate this service?');">
+                                        Deactivate
+                                    </button>
+                                </form>
+                                {% else %}
+                                <form method="POST" action="{{ url_for('activate_service', service_id=service.id) }}" 
+                                      style="display: inline;">
+                                    <button type="submit" class="btn-primary" 
+                                            style="font-size: 12px; padding: 5px 10px;">
+                                        Activate
+                                    </button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p style="color: #6c757d; padding: 20px; background: #f8f9fa; border-radius: 4px;">
+                    No services added yet for this hospital.
+                </p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No hospitals found.</p>
+    {% endif %}
+</div>
+
+<!-- Custom filter to get services by hospital_id -->
+{% macro get_services_for_hospital(hospital_id) %}
+    {# This will be replaced by actual query in route #}
+{% endmacro %}
+{% endblock %}

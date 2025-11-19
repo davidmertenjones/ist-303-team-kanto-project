@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Feedback: {{ hospital_name }}{% endblock %}
+
+{% block content %}
+<div class="catalog-shell">
+    <h1 class="catalog-title">{{ hospital_name }}</h1>
+    
+    <!-- Rating Summary -->
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+            <div>
+                <div style="font-size: 48px; font-weight: bold; color: #007bff;">
+                    {{ avg_rating }}
+                </div>
+                <div style="color: #6c757d;">
+                    {% for i in range(5) %}
+                        {% if i < avg_rating %}
+                            <span style="color: gold; font-size: 24px;">★</span>
+                        {% else %}
+                            <span style="color: #dee2e6; font-size: 24px;">★</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <p style="font-size: 18px; margin: 0;">
+                    <strong>{{ total_reviews }}</strong> reviews
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add Feedback Button -->
+    <div style="margin-bottom: 30px;">
+        <a href="{{ url_for('public_feedback') }}" class="btn-primary">
+            + Share Your Feedback
+        </a>
+    </div>
+    
+    <!-- Reviews List -->
+    {% if reviews %}
+        <h2>Patient Feedback</h2>
+        {% for review in reviews %}
+        <div class="review-card" style="border: 1px solid #dee2e6; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <div>
+                    <strong>{{ review.reviewer_name }}</strong>
+                    {% if review.is_verified %}
+                        <span style="color: #28a745; font-size: 12px;">✓ Verified</span>
+                    {% endif %}
+                </div>
+                <div style="color: #6c757d; font-size: 14px;">
+                    {{ review.created_at }}
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                {% for i in range(5) %}
+                    {% if i < review.rating %}
+                        <span style="color: gold;">★</span>
+                    {% else %}
+                        <span style="color: #dee2e6;">★</span>
+                    {% endif %}
+                {% endfor %}
+                <span style="color: #6c757d; margin-left: 10px;">
+                    ({{ review.rating }}/5)
+                </span>
+            </div>
+            
+            <p style="line-height: 1.6; color: #212529;">
+                {{ review.comment }}
+            </p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p style="color: #6c757d; text-align: center; padding: 40px;">
+            No feedback yet. Be the first to share your experience!
+        </p>
+    {% endif %}
+</div>
+{% endblock %}

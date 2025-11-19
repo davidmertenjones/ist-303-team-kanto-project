@@ -50,15 +50,28 @@ class Hospital(db.Model):
     childrens = db.Column(db.Integer, nullable=False)
     veterans = db.Column(db.Integer, nullable=False)
 
-#Review database model - stores user reviews for hospitals
+#Review database model - stores user reviews for hospitals (supports anonymous)
 class Review(db.Model):
     __tablename__ = 'review'
     id = db.Column(db.Integer, primary_key=True)
     hospital_name = db.Column(db.String(100), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)  # Nullable for anonymous
+    user_name = db.Column(db.String(50), nullable=True)  # For anonymous reviewers
     rating = db.Column(db.Integer, nullable=False)
     comment = db.Column(db.String(500), nullable=False)
     created_at = db.Column(db.String(50), nullable=False)
+    is_verified = db.Column(db.Integer, default=0)  # 1 if from logged-in user
+
+#Service database model - stores services offered by hospitals
+class Service(db.Model):
+    __tablename__ = 'service'
+    id = db.Column(db.Integer, primary_key=True)
+    hospital_id = db.Column(db.String(100), db.ForeignKey('hospital.id'), nullable=False)
+    service_name = db.Column(db.String(100), nullable=False)
+    description = db.Column(db.String(500), nullable=True)
+    is_active = db.Column(db.Integer, default=1)  # 1 = active, 0 = inactive
+    created_at = db.Column(db.String(50), nullable=False)
+    updated_at = db.Column(db.String(50), nullable=False)
 
 def load_hospital_data():
 

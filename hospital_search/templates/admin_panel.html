@@ -21,8 +21,9 @@
 
     <!-- Quick Actions -->
     <div style="display: flex; gap: 16px; margin-top: 30px;">
+      <a href="{{ url_for('manage_services') }}" class="btn-primary">Manage Services</a>
+      <a href="{{ url_for('all_feedback') }}" class="btn-primary">View All Feedback</a>
       <a href="{{ url_for('home') }}" class="btn-primary">Back to Search</a>
-      <a href="{{ url_for('dashboard') }}" class="btn-primary">Dashboard</a>
     </div>
   </div>
 {% endblock %}

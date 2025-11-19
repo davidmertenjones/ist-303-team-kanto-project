@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head_title %}{{ action }} Service{% endblock %}
+
+{% block content %}
+<div class="catalog-shell">
+    <h1 class="catalog-title">{{ action }} Service</h1>
+    <p>{{ hospital.fac_name }}</p>
+    
+    <form method="POST" style="max-width: 600px;">
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="service_name">Service Name</label>
+            {{ form.service_name(class="form-input") }}
+        </div>
+        
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="description">Description</label>
+            {{ form.description(class="form-textarea", rows="4") }}
+        </div>
+        
+        <div style="display: flex; gap: 10px;">
+            {{ form.submit(class="btn-primary") }}
+            <a href="{{ url_for('manage_services') }}" class="auth-link">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
