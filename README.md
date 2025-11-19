@@ -356,17 +356,23 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 #### Enable GitHub Actions to run pytest on pull and push requests  -- David (Please reference the workflow .yml file
 
 ### <ins>Project Management Details</ins>
-**Commits:** 
+**Readme:**
+https://github.com/davidmertenjones/ist-303-team-kanto-project
+
+**Commits** 
 https://github.com/davidmertenjones/ist-303-team-kanto-project/graphs/commit-activity
 
-**Code Frequency:**
+**Code Frequency**
 https://github.com/davidmertenjones/ist-303-team-kanto-project/graphs/code-frequency
 
-**Individual Contributions:**
+**Individual Contributions**
 https://github.com/davidmertenjones/ist-303-team-kanto-project/graphs/contributors
 
 **Project Dashboard**
 https://github.com/users/davidmertenjones/projects/1
+
+**Issue Management**
+https://github.com/davidmertenjones/ist-303-team-kanto-project/issues
 
 **Burndown Chart** 
 Burndown Chart as of Week 12:
