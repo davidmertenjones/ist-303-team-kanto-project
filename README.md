@@ -357,7 +357,7 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 
 ### <ins>Project Management Details</ins>
 **Readme:**
-https://github.com/davidmertenjones/ist-303-team-kanto-project
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/README.md
 
 **Commits** 
 https://github.com/davidmertenjones/ist-303-team-kanto-project/graphs/commit-activity
