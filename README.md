@@ -24,13 +24,17 @@ source venv/bin/activate
 ```
 (venv)% pip install -r requirements.txt
 ```
-6.	Run the Flask application on your machine
+6. Set the FLASK_APP environment variable to the main Flask file
 ```
-flask –app app.py run
+export FLASK_APP=app.py
 ```
-7.	The Flask application is accessible from http://127.0.0.1:5000
+7.	Run the Flask application on your machine
+```
+flask run
+```
+8.	The Flask application is accessible from http://127.0.0.1:5000
    
-8.	Database is available under the “hospital_search/instance” folder named “database.db”.  If database is not available or accidentally deleted, you can setup the database using the `init_db.py` script.
+9.	Database is available under the “hospital_search/instance” folder named “database.db”.  If database is not available or accidentally deleted, you can setup the database using the `init_db.py` script.
 ```
 python init_db.py
 ```  
@@ -47,7 +51,7 @@ pytest
 ```
 
 ## Steps to report coverage
-1. IN command prompt, navigate to the directory "hospital_search" (?)
+1. In command prompt, navigate to the directory "hospital_search" (?)
 ```
 cd hospital_search
 ```
@@ -267,20 +271,13 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
       * Enable role-based access
     * Test development (2 days) - Jen
 
-5. As a healthcare provider, I want to view the types of services available at my facility (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can recommend appropriate options to patients.
-    * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
-      * View ratings and feedback
-      * Provide ratings and feedback	
-    * App development (3 days) – Aashish, David
-    * Test development (2 days) - Jen
-
-6. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
+5. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
     * UI/UX design and review (2 days) – Jennifer, Eva, Aishwarya
       * View catalog of services
     * App development (2 days) – Aashish, David
     * Test development (2 days) - Jen
 
-7. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
+6. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
     * UI/UX design and review (3 days) – Jennifer, Eva, Aishwarya
       * Add services
       * Remove services
@@ -292,7 +289,7 @@ The user stories for Milestone 2.0 are broken into tasks, with team members assi
 ## PART C
 Refer to [“Steps to run and test the application”](#steps-to-run-and-test-the-application) section of this README to run and test the application.
 
-### <ins>Project Dashboard>/ins>
+### <ins>Project Dashboard</ins>
 https://github.com/users/davidmertenjones/projects/1
 
 ### <ins>Test Strategies</ins>
@@ -335,6 +332,20 @@ As a patient, I want to view detailed provider information including name, addre
 ### <ins>Burndown Chart</ins> 
 * Burndown Chart as of Week 8:\
   https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%208.png
+
+## PART D
+### <ins>Milestone 2.0 Presentation</ins>
+
+### <ins>Milestone 2.0 Working Code</ins>
+Refer to #Steps-to-run-and-test-the-application section of the readme to run and test the application.
+
+### <ins>Milestone 2.0 User Stories</ins>
+4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
+5. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
+6. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
+
+
+
 
 
 
