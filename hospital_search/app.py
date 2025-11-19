@@ -279,6 +279,28 @@ def logout():
 def admin_panel():
     return render_template('admin_panel.html')
 
+@app.route('/manage_user_accounts')
+@roles_required('Admin')
+def manage_user_accounts():
+    return render_template('manage_user_accounts.html')
+
+#search - loads search results dynamically within home
+@app.route("/search_users")
+def search_users():
+    q = request.args.get("q")
+    print(q)
+
+    if q:
+        results = User.query.filter(User.username.icontains(q) | User.email.icontains(q)).all()
+    else:
+        results = []
+
+    return render_template("user_search_results.html", results=results)
+
+@app.route('/demo')
+def demo():
+    return render_template('demo.html')
+
 #review - allows logged-in Users and Admins to submit reviews
 #roles_accepted prevents Providers from rating their own facilities
 @app.route('/review', methods=['GET', 'POST'])

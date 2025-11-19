@@ -1,0 +1,17 @@
+{% for result in results %}
+<tr>
+  <td>{{ result.id}}</td>
+  <td> {{ result.username}}</td>
+  <td> {{ result.email}}</td>
+  <td> {{ result.active}}</td>
+  <td>
+    <select name="pets" id="pet-select" >
+      <option value="user" {% if result.is_user %} selected="selected" {% endif %}>User </option>
+      <option value="provider" {% if result.is_provider %} selected="selected" {% endif %}>Provider</option>
+      <option value="admin" {% if result.is_admin %} selected="selected" {% endif %}>Admin</option>
+    </select>
+  </td>
+  
+  <td> {{ result.fs_uniquifier}}</td>
+</tr>
+{% endfor %}

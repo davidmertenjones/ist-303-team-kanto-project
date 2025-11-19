@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head_title %}Manage Users{% endblock %}
+
+{% block content %}
+<div id="results" class="table"></div>
+
+<div style="margin: 40px 0; text-align: center;">
+      <input 
+        type="text" 
+        class="form-input" 
+        placeholder="Search username or email..." 
+        name="q" 
+        hx-get="/search_users" 
+        hx-trigger="keyup changed delay:500ms" 
+        hx-target="#results"
+        style="width: 100%; max-width: 500px; margin: 0 auto;">
+    </div>
+{% endblock %}{% block user_grid %}
+    <table>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Active</th>
+        <th>Roles</th>
+        <th>UUID</th>
+
+    </table>
+</div>
+{% endblock %}
