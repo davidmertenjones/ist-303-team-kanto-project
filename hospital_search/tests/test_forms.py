@@ -1,5 +1,5 @@
 import pytest
-from app import SignupForm, LoginForm
+from app import SignupForm, LoginForm, Role
 
 class TestForms:
     
