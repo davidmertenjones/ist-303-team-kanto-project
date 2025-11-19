@@ -341,8 +341,17 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 
 ### <ins>Milestone 2.0 User Stories</ins>
 4. As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions.
+
 5. As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users.
+
 6. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
+
+### <ins>Lessons Learned on Software Development</ins>
+1. A key lesson we learned is that both project requirements and plans are constantly evolving. As stakeholder needs and technical realities changed, it became clear that we needed to continuously revisit and refine both user stories and the project plan. Regularly adjusting milestone scopes, timelines, and priorities based on actual progress helped keep the project aligned, flexible, and on track while minimizing surprises down the line.
+
+2. Large tasks are risky and hard to track. Breaking down stories into smaller, testable, and deliverable chunks improves clarity, estimation, and momentum.
+
+3. Allocating time for regular team check-ins and collaborative work sessions made a significant difference. Open communication helped us stay informed on progress, understand blockers early, and adapt quickly. We learned that active collaboration is just as important as individual contributions when building a successful software project.
 
 
 
