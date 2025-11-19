@@ -31,7 +31,8 @@
           <div class="level-item">
             {% if current_user.is_admin %}
               <a href="{{ url_for('admin_panel') }}" class="admin-review-btn">Admin Panel</a>
-            {% else %}
+            {% endif %}
+            {% if not current_user.is_provider %}
               <a href="{{ url_for('review') }}" class="admin-review-btn">Leave Review</a>
             {% endif %}
           </div>
