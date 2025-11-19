@@ -330,8 +330,8 @@ As a patient, I want to view detailed provider information including name, addre
 | 3   | As a patient, I want to view detailed provider information including name, address, phone number, ratings, and available service types (e.g., urgent care, maternity, pediatrics, veteran care, psychiatric services) so I can make informed decisions about my care. | <ul><li>Each hospital facility listed includes details such as name, address, phone number, available services.</li><li>If no results are found, a clear message such as “No matching services found” is displayed.</li></ul> |
 
 ### <ins>Burndown Chart</ins> 
-* Burndown Chart as of Week 8:\
-  https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%208.png
+Burndown Chart as of Week 8:\
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%208.png
 
 ### <ins>Milestone 1.0 Presentation</ins>
 https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Presentation_Slides/Hospital%20Facilities%20Catalog%20Presentation%20(Milestone%201).pptx
