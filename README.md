@@ -333,6 +333,9 @@ As a patient, I want to view detailed provider information including name, addre
 * Burndown Chart as of Week 8:\
   https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%208.png
 
+### <ins>Milestone 1.0 Presentation</ins>
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Presentation_Slides/Hospital%20Facilities%20Catalog%20Presentation%20(Milestone%201).pptx
+
 ## PART D
 ### <ins>Milestone 2.0 Presentation</ins>
 
