@@ -37,15 +37,27 @@ python init_db.py
 
 ## Steps to test the application
 1.	Install pytest, pytest-flask, and pytest-coverage if they are not already installed
-2.	In command prompt, navigate to the directory “hospital_search”
+2.	In command prompt, navigate to the directory “hospital_search/tests”
 ```
-cd hospital_search
+cd hospital_search/tests
 ```
-3.	Use the command below to run the tests 
+3.	Use the command below to run the tests.  This wlll result PASS/FAIL results of the pytests.
 ```
 pytest
 ```
 
+## Steps to report coverage
+1. IN command prompt, navigate to the directory "hospital_search" (?)
+```
+cd hospital_search
+```
+2. Use the command below to determine the test coverage
+```
+pytest --cov==hospital_search
+```
+This will return a chart detailing each file in the project and the amount of coverage the tests provide for them, as well as the total percentage of coverage for the entire project in the "hospital_search" folder.
+
+This is an example of the coverage report -- Jen
 
 # A Hospital Facilities Catalog
 
