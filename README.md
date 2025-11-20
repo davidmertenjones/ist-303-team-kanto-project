@@ -41,9 +41,9 @@ python init_db.py
 
 ## Steps to test the application
 1.	Install pytest, pytest-flask, and pytest-coverage if they are not already installed
-2.	In command prompt, navigate to the directory “hospital_search/tests”
+2.	In command prompt, navigate to the directory “hospital_search”
 ```
-cd hospital_search/tests
+cd hospital_search
 ```
 3.	Use the command below to run the tests.  This wlll result PASS/FAIL results of the pytests.
 ```
