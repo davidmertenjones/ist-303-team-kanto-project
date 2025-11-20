@@ -358,7 +358,7 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 | 6   | As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement. | <ul><li>Verify that reviews and ratings can only be submitted by Patient role, and that feedback management function can only be accessed by Admin role. </li><li> Ensure data persistence, that review information is stored and retrieved correctly. </li></ul> |
 
 #### Enable GitHub Actions to run pytest on pull and push requests -- David
-To trigger on push and pull_request events and run pytest, create a workflow file named actions.yml in .github/workflows/:
+To trigger on push and pull_request events and run pytest, create a workflow file named actions.yml in .github/workflows/:\
 https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/.github/workflows/actions.yml
 
 ### <ins>Project Management Details</ins>
