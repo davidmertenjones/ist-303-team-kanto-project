@@ -47,17 +47,17 @@ cd hospital_search/tests
 ```
 3.	Use the command below to run the tests.  This wlll result PASS/FAIL results of the pytests.
 ```
-pytest
+pytest -v
 ```
 
 ## Steps to report coverage
-1. In command prompt, navigate to the directory "hospital_search" (?)
+1. In command prompt, navigate to the directory "hospital_search"
 ```
 cd hospital_search
 ```
 2. Use the command below to determine the test coverage
 ```
-pytest --cov==hospital_search
+pytest --cov=app --cov-report=term-missing
 ```
 This will return a chart detailing each file in the project and the amount of coverage the tests provide for them, as well as the total percentage of coverage for the entire project in the "hospital_search" folder.
 
