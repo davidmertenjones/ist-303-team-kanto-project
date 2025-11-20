@@ -62,7 +62,7 @@ pytest --cov==hospital_search
 This will return a chart detailing each file in the project and the amount of coverage the tests provide for them, as well as the total percentage of coverage for the entire project in the "hospital_search" folder.
 
 This is an example of the coverage report -- Jen 
-![This is an example of the coverage report.](http://url/to/img.png)
+![This is an example of the coverage report.](https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/testsummary.png)
 
 # A Hospital Facilities Catalog
 
