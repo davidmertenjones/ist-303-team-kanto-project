@@ -49,6 +49,7 @@ cd hospital_search
 ```
 pytest -v
 ```
+![This is the pytest output.](https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/pytestresult.png)
 
 ## Steps to report coverage
 1. In command prompt, navigate to the directory "hospital_search"
