@@ -381,7 +381,8 @@ https://github.com/users/davidmertenjones/projects/1
 https://github.com/davidmertenjones/ist-303-team-kanto-project/issues
 
 **Burndown Chart** 
-Burndown Chart as of Week 12:
+Burndown Chart as of Week 12:\
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Burndown%20Chart%20Week%2012.png
 
 ### <ins>Lessons Learned on Software Development</ins>
 1. A key lesson we learned is that both project requirements and plans are constantly evolving. As stakeholder needs and technical realities changed, it became clear that we needed to continuously revisit and refine both user stories and the project plan. Regularly adjusting milestone scopes, timelines, and priorities based on actual progress helped keep the project aligned, flexible, and on track while minimizing surprises down the line.
