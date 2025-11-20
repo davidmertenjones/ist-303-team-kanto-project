@@ -282,7 +282,8 @@ def admin_panel():
 @app.route('/manage_user_accounts')
 @roles_required('Admin')
 def manage_user_accounts():
-    return render_template('manage_user_accounts.html')
+    results = User.query.filter(User.username.icontains("*") | User.email.icontains("*")).all()
+    return render_template('manage_user_accounts.html', results=results)
 
 #search - loads search results dynamically within home
 @app.route("/search_users")
@@ -290,10 +291,10 @@ def search_users():
     q = request.args.get("q")
     print(q)
 
-    if q:
-        results = User.query.filter(User.username.icontains(q) | User.email.icontains(q)).all()
+    if q == '':
+        results = User.query.filter(User.username.icontains("*") | User.email.icontains("*")).all()
     else:
-        results = []
+        results = User.query.filter(User.username.icontains(q) | User.email.icontains(q)).all()
 
     return render_template("user_search_results.html", results=results)
 

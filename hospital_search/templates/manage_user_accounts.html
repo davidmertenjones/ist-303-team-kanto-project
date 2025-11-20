@@ -12,7 +12,7 @@
         placeholder="Search username or email..." 
         name="q" 
         hx-get="/search_users" 
-        hx-trigger="keyup changed delay:500ms" 
+        hx-trigger="load, keyup changed delay:500ms" 
         hx-target="#results"
         style="width: 100%; max-width: 500px; margin: 0 auto;">
     </div>
