@@ -61,7 +61,7 @@ pytest --cov=app --cov-report=term-missing
 ```
 This will return a chart detailing each file in the project and the amount of coverage the tests provide for them, as well as the total percentage of coverage for the entire project in the "hospital_search" folder.
 
-This is an example of the coverage report -- Jen 
+This is an example of the coverage report.
 ![This is an example of the coverage report.](https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/testsummary.png)
 
 # A Hospital Facilities Catalog
@@ -353,9 +353,9 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 #### Test Strategies Summary -- Jen & Ash
 | <div style="width: 100px;">User Stories</div> | <div style="width: 500px;">Description</div> |<div style="width: 500px;">Testing Strategy</div> |
 | :----- | :------ | :---------- |
-| 4   | As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions. | <ul><li>Implement automated tests to validate user input handling and search logic.</li><li>Perform manual UI testing to ensure users can search hospital facilities by name, city, or ZIP code within Los Angeles.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
-| 5   | As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users. | Perform manual UI testing to ensure: <ul><li>The application provides an option for users to browse hospitals by medical specialty.</li><li>The results page displays a list of hospital facilities that match the selected medical specialty.</li><li>Verify that search results accurately reflect data retrieved from the database and match the user’s input criteria.</li></ul> |
-| 6   | As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement. | <ul><li>Each hospital facility listed includes details such as name, address, phone number, available services.</li><li>If no results are found, a clear message such as “No matching services found” is displayed.</li></ul> |
+| 4   | As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions. | <ul><li>Verify that administrator panel can only be accessed by Admin role and test behavior during unauthorized access attempts.</li><li>Test user creation with different roles, and then validate role assignment and check that permissions are enforced.</li><li>Test user modification, that admins can change users' roles.</li></ul> |
+| 5   | As a hospital or clinic administrator, I want to add, update, or remove the services offered by my facility so that the information remains accurate and up to date for users. | <ul><li> Ensure that service management function can be accessed by Provider and Admin roles. </li><li> Ensure data persistence, that service modification workflow is working. </li></ul> |
+| 6   | As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement. | <ul><li>Verify that reviews and ratings can only be submitted by Patient role, and that feedback management function can only be accessed by Admin role. </li><li> Ensure data persistence, that review information is stored and retrieved correctly. </li></ul> |
 
 #### Enable GitHub Actions to run pytest on pull and push requests -- David
 To trigger on push and pull_request events and run pytest, create a workflow file named actions.yml in .github/workflows/:
