@@ -3,7 +3,7 @@
 {% block head_title %}Manage Users{% endblock %}
 
 {% block content %}
-<div id="results" class="table"></div>
+
 
 <div style="margin: 40px 0; text-align: center;">
       <input 
@@ -16,12 +16,12 @@
         hx-target="#results"
         style="width: 100%; max-width: 500px; margin: 0 auto;">
     </div>
+
+<div id="results" class="centerTable" style="text-align: center; border-collapse:collapse; border:3px solid #000000;"></div>
 {% endblock %}{% block user_grid %}
-    <table>{
-border-collapse:collapse;
-border:1px solid #FF0000;
-}
-        <th>ID</th>
+    <table>
+
+        <th >ID</th>
         <th>Username</th>
         <th>Email</th>
         <th>Active</th>
