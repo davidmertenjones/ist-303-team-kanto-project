@@ -13,7 +13,6 @@
           {% if current_user.is_provider %}
             <a href="{{ url_for('dashboard') }}" class="auth-link">My facility</a>
           {% endif %}
-          <a href="{{ url_for('logout') }}" class="auth-link">Log out</a>
         {% endif %}
       </div>
     </div>
