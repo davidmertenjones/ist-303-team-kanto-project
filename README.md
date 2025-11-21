@@ -340,6 +340,7 @@ https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Present
 
 ## PART D
 ### <ins>Milestone 2.0 Presentation</ins>
+https://github.com/davidmertenjones/ist-303-team-kanto-project/blob/main/Presentation_Slides/Hospital%20Facilities%20Catalog%20Presentation%20(Milestone%202.0).pptx
 
 ### <ins>Milestone 2.0 Working Code</ins>
 Refer to [Steps to run and test the application](#steps-to-run-and-test-the-application) section of the readme to run and test the application.
@@ -351,7 +352,7 @@ Refer to [Steps to run and test the application](#steps-to-run-and-test-the-appl
 
 6. As a patient, I want to view and submit ratings and feedback for services I’ve received so I can share my experience with other patients and provide input to the hospital for improvement.
 
-#### Test Strategies Summary -- Jen & Ash
+#### Test Strategies Summary
 | <div style="width: 100px;">User Stories</div> | <div style="width: 500px;">Description</div> |<div style="width: 500px;">Testing Strategy</div> |
 | :----- | :------ | :---------- |
 | 4   | As an IT administrator or application support team member, I want the ability to create and manage user accounts and assign role-specific access to services, configurations, settings, and tools so that users have the appropriate permissions. | <ul><li>Verify that administrator panel can only be accessed by Admin role and test behavior during unauthorized access attempts.</li><li>Test user creation with different roles, and then validate role assignment and check that permissions are enforced.</li><li>Test user modification, that admins can change users' roles.</li></ul> |
